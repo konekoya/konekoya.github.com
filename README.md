@@ -8,3 +8,4 @@ My personal website repo
 4. Build this site as a CV for later use
 5. I should also host my own jelly blog service on github?
 6. content should includ intro about me, just like hello by jlord, social links, works
+7. design a favicon
