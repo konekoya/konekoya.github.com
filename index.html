@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
   <meta charset="UTF-8">
   <title>Hey, I'm Joshua</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <style>
-    body {
-      color: #fff;
-      background-color: #ff4444;
-      font-family: 'Roboto', sans-serif;
-      text-align: center;
-    }
-    a {
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="./script.js"></script>
 </head>
-<body>
-  <h1>I'm working hard on this site... coming soon :)</h1>
-  <p>to learn more about me, check this site out <a href="http://konekoya.github.io/howdy/" target="_blank">Hodwy</a></p>
+<body ng-controller="MainController">
+  <h1>Hey, This is {{user.name}}</h1>
+  <div>
+    <img ng-src="{{user.avatar_url}}" alt="Joshua's picture">
+  </div>
+  <div>
+    <a href="{{user.html_url}}">Check out my open source projects</a>
+  </div>
 </body>
 </html>
