@@ -16,5 +16,23 @@
   <div>
     <a href="{{user.html_url}}">Check out my open source projects</a>
   </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Stars</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="repo in repos | limitTo:10 | orderBy: repoSortOrder">
+        <td>{{repo.name}}</td>
+        <td>{{repo.stargazers_count}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </body>
 </html>
