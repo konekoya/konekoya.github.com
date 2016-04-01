@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="githubViewer">
+<head>
+  <meta charset="UTF-8">
+  <title>Hey, I'm Joshua</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="./js/script.js"></script>
+</head>
+<body ng-controller="MainController">
+  <h1>Hey, This is {{user.name}}</h1>
+  <div>
+    <img ng-src="{{user.avatar_url}}" alt="Joshua's picture">
+  </div>
+  <div>
+    <a href="{{user.html_url}}">Check out my open source projects</a>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Stars</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="repo in repos | limitTo:10 | orderBy: repoSortOrder">
+        <td>{{repo.name}}</td>
+        <td>{{repo.stargazers_count}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
