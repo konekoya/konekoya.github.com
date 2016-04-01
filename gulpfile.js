@@ -7,17 +7,9 @@ var runSequence = require('run-sequence');
 var src = './src/';
 var config = {
   build: './build/',
-  html: src + 'index.html',
-  scss: src + 'scss/style.scss',
+  scss: src + 'scss/styles.scss',
   js: src + 'js/scripts.js'
 };
-
-gulp.task('htmls', function() {
-  console.log('Moving index.html to build folder');
-  return gulp
-    .src(config.html)
-    .pipe(gulp.dest(config.build))
-});
 
 gulp.task('styles', function() {
   console.log('Compiling SCSS --> CSS');
@@ -29,7 +21,7 @@ gulp.task('styles', function() {
     .pipe($.postcss([
       cssnano()
     ]))
-    .pipe($.concat('app.css'))
+    .pipe($.concat('styles.css'))
     .pipe(gulp.dest(config.build + 'css'));
 });
 
@@ -41,7 +33,7 @@ gulp.task('scripts', function() {
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.uglify())
-    .pipe($.concat('app.js'))
+    .pipe($.concat('scripts.js'))
     .pipe(gulp.dest(config.build + 'js'));
 });
 
@@ -51,5 +43,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function() {
-  runSequence('htmls', 'styles', 'scripts', 'watch');
+  runSequence('styles', 'scripts', 'watch');
 });
