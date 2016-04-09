@@ -7,7 +7,7 @@ var runSequence = require('run-sequence');
 var src = './src/';
 var config = {
   build: './build/',
-  scss: src + 'scss/styles.scss',
+  scss: src + '/scss/**/*.scss',
   js: src + 'js/scripts.js'
 };
 
