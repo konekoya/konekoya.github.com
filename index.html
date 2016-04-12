@@ -3,35 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Hey, I'm Joshua</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="./build/css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   <script src="./build/js/scripts.js"></script>
 </head>
 <body ng-controller="MainController">
-  <div>
-    <img class="img-rounded" ng-src="{{user.avatar_url}}" alt="Joshua">
+  <div class="avatar">
+    <h1 class="avatar__title">Joshua</h1>
+    <img class="avatar__img img-rounded" ng-src="{{user.avatar_url}}" alt="Joshua">
+    <span class="avatar__txt">Profile</span>
   </div>
-  <div>
-    <a href="{{user.html_url}}">Check out my open source projects</a>
-  </div>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Stars</th>
-        <th>Language</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="repo in repos | limitTo:10 | orderBy: repoSortOrder">
-        <td>{{repo.name}}</td>
-        <td>{{repo.stargazers_count}}</td>
-        <td>{{repo.language}}</td>
-      </tr>
-    </tbody>
-  </table>
-
 </body>
 </html>
