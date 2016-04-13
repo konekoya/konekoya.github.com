@@ -9,10 +9,17 @@
   <script src="./build/js/scripts.js"></script>
 </head>
 <body ng-controller="MainController">
-  <div class="avatar">
-    <h1 class="avatar__title">Joshua</h1>
-    <img class="avatar__img img-rounded" ng-src="{{user.avatar_url}}" alt="Joshua">
-    <span class="avatar__txt">Profile</span>
-  </div>
+  <section class="avatar">
+    <div class="avatar__body  text-centered">
+      <h1 class="avatar__title  avatar__text-item">Joshua</h1>
+      <img class="avatar__img  img-rounded" ng-src="{{user.avatar_url}}" alt="Joshua's Picture">
+      <span class="avatar__text  avatar__text-item">Profile</span>
+    </div>
+  </section>
+  
+  <section class="intro">
+    
+  </section>
+
 </body>
 </html>

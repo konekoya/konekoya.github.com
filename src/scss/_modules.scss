@@ -1,0 +1,30 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.avatar__title {
+  font-size: 2.25rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.avatar__img {
+  width: 140px;
+  height: 140px;
+}
+
+.avatar__text-item {
+  display: block;
+  width: 100%;
+}
+
+.avatar__text {
+  font-size: 0.875rem;
+  color: $theme-subtle;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
