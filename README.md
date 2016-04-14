@@ -10,3 +10,6 @@ My personal website repo
 - Design a favicon
 - Add gulp connect
 - Set up bower
+
+#credit
+- background effect is inspired by [hello](http://jlord.us/hello/)

@@ -22,11 +22,12 @@ gulp.task('styles', function() {
       cssnano()
     ]))
     .pipe($.concat('styles.css'))
-    .pipe(gulp.dest(config.build + 'css'));
+    .pipe(gulp.dest(config.build + 'css'))
+    .pipe($.connect.reload());
 });
 
 gulp.task('scripts', function() {
-  console.log('Analyzing source with JSHint and JSCS');
+  console.log('Analyzing source with JSHint');
   return gulp
     .src(config.js)
     .pipe($.plumber())
@@ -34,14 +35,40 @@ gulp.task('scripts', function() {
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.uglify())
     .pipe($.concat('scripts.js'))
-    .pipe(gulp.dest(config.build + 'js'));
+    .pipe(gulp.dest(config.build + 'js'))
+    .pipe($.connect.reload());
+});
+
+
+gulp.task('webserver', function() {
+  console.log('Running webserver and livereload');
+  $.connect.server({
+    // the root parameter is needed
+    root: __dirname,
+    livereload: true
+  });
 });
 
 gulp.task('watch', function() {
+  console.log('listening file changes');
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
 
 gulp.task('default', function() {
-  runSequence('styles', 'scripts', 'watch');
+  runSequence('styles', 'scripts', 'watch', 'webserver');
 });
+
+// Todo, fix the log function
+// helper functions
+function log(msg) {
+  if (typeof(msg) === 'object') {
+    for (var item in msg) {
+      if (msg.hasOwnProperty(item)) {
+        $.util.log($.util.colors.green(msg(item)));
+      }
+    }
+  } else {
+    $.util.log($.util.colors.green(msg));
+  }
+}
