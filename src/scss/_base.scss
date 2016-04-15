@@ -7,7 +7,7 @@ html, body {
 body {
   font-family: $main-font;
   margin: 0 auto;
-  padding: 0;
+  padding: 3rem;
   line-height: 2em;
   font-size: 100%;
   color: $white;
@@ -17,4 +17,9 @@ body {
   background: -webkit-linear-gradient(-45deg,  $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg,  $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$theme-secondary', endColorstr='$theme-primary',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+a {
+  color: $white;
+  text-decoration: underline;
 }

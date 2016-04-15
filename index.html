@@ -4,25 +4,30 @@
   <meta charset="UTF-8">
   <title>Hey, I'm Joshua</title>
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/onepage-scroll/1.3.1/onepage-scroll.min.css">
   <link rel="stylesheet" type="text/css" href="./build/css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-  <script src="./build/js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/onepage-scroll/1.3.1/jquery.onepage-scroll.min.js"></script>
 </head>
 <body ng-controller="MainController">
-  <section class="avatar full-viewport-heigh">
-    <div class="avatar__body  text-centered">
-      <h1 class="avatar__title  avatar__text-item">Joshua</h1>
-      <img class="avatar__img  img-rounded" ng-src="{{user.avatar_url}}" alt="Joshua's Picture">
-      <span class="avatar__text  avatar__text-item">Profile</span>
-    </div>
-  </section>
+  <div class="main">
+    <section class="section  avatar  util-full-viewport-heigh  util-flex-centered  util-text-centered">
+      <div class="avatar__body">
+        <h1 class="avatar__title  avatar__text-item">Joshua</h1>
+        <img class="avatar__img  util-rounded" ng-src="{{user.avatar_url}}" alt="Joshua's Picture">
+        <span class="avatar__text  avatar__text-item">Profile</span>
+      </div>
+    </section>
 
-  <section class="intro full-viewport-heigh">
-    <article>
-        <p>Christan, husband, father, Web Frontend Developer and Designer living in <a href="https://en.wikipedia.org/wiki/Hsinchu" target="_blank">Hsinchu, Taiwan</a>. I work at <a href="http://www.rulingcom.com" target="_blank">RulingDigital</a>, volunteer at <a href="https://newcityhsinchu.wordpress.com/" target="_blank">New City Church</a> and do some <a href="http://www.github.com/konekoya" target="_blank">Open Source</a>, too.</p>
-        <p> Previously I was a Graph Designer, but the call of the wild open tech world eventually won me over.</p>
-      </article>
-  </section>
+    <section class="section  intro  util-full-viewport-heigh  util-flex-centered">
+      <article>
+          <p>Christan, husband, father, Web Frontend Developer and Designer living in <a href="https://en.wikipedia.org/wiki/Hsinchu" target="_blank">Hsinchu, Taiwan</a>. I work at <a href="http://www.rulingcom.com" target="_blank">RulingDigital</a>, volunteer at <a href="https://newcityhsinchu.wordpress.com/" target="_blank">New City Church</a> and do some <a href="http://www.github.com/konekoya" target="_blank">Open Source</a>, too.</p>
+          <p> Previously I was a Graph Designer, but the call of the wild open tech world eventually won me over.</p>
+        </article>
+    </section>
+  </div>
 
+  <script src="./build/js/scripts.js"></script>
 </body>
 </html>

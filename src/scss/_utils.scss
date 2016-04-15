@@ -1,11 +1,17 @@
-.img-rounded {
+.util-rounded {
   border-radius: 50%;
 }
 
-.text-centered {
+.util-flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.util-text-centered {
   text-align: center;
 }
 
-.full-viewport-heigh {
+.util-full-viewport-heigh {
   height: 100vh;
 }
