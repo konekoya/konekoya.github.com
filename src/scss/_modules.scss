@@ -1,3 +1,5 @@
+// avatar section
+
 .avatar {
   height: 100vh;
 }
@@ -24,4 +26,12 @@
   color: $theme-subtle;
   text-transform: uppercase;
   letter-spacing: 10px;
+}
+
+// intro section
+
+.intro__content {
+  font-family: $sub-font;
+  width: 60%;
+  font-size: 1.3rem;
 }
