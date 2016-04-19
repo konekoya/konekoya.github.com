@@ -1,5 +1,4 @@
 // avatar section
-
 .avatar {
   height: 100vh;
 }
@@ -29,9 +28,41 @@
 }
 
 // intro section
-
 .intro__content {
   font-family: $sub-font;
-  width: 60%;
+  width: 600px;
   font-size: 1.3rem;
+}
+
+// link module
+.link-slide-in {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 0 3px 0 3px;
+  border-bottom: 1px solid $white;
+  overflow: hidden;
+  &:hover {
+    border-bottom: 1px solid transparent;
+  }
+  &::after {
+    content: attr(data-linktext);
+    padding: 0 3px 2px 3px;
+    position: absolute;
+    color: $white;
+    background-color: $black;
+    transition: all .3s;
+  }
+}
+
+.link-slide-in-left {
+  &:hover {
+    &::after {
+      left: 0;
+    }
+  }
+  &::after {
+    left: -100%;
+  }
 }
