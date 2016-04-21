@@ -1,6 +1,12 @@
 // avatar section
 .avatar {
   height: 100vh;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
+  background: $theme-secondary; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  $theme-secondary 0%, $theme-secondary 50%, $theme-primary 50%, $theme-primary 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$theme-secondary', endColorstr='$theme-primary',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .avatar__title {
@@ -28,6 +34,16 @@
 }
 
 // intro section
+.intro {
+  background-color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
+  background: #4c008d; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c008d', endColorstr='#39006a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
 .intro__content {
   font-family: $sub-font;
   width: 600px;
@@ -41,7 +57,7 @@
   display: inline-block;
   vertical-align: bottom;
   padding: 0 3px 0 3px;
-  border-bottom: 1px solid $white;
+  border-bottom: 1px dotted $white;
   overflow: hidden;
   &:hover {
     border-bottom: 1px solid transparent;
