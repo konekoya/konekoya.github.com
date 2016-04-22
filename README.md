@@ -17,3 +17,10 @@ On weekends, he enjoys spending time with his family.
 
 #credit
 - background effect is inspired by [hello](http://jlord.us/hello/)
+
+
+#FIY
+http://www.jcsuzanne.com/
+https://pillarstudio.com/
+http://claudiocalautti.cc/
+http://erikzuuring.com/
