@@ -47,6 +47,7 @@
 .intro__content {
   font-family: $sub-font;
   width: 600px;
+  margin: auto; // need this line to fix center problem causing by fullpage.js
   font-size: 1.3rem;
 }
 
