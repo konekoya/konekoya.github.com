@@ -1,2 +1,2 @@
 !function(){"use strict";var t=angular.module("githubViewer",[]),e=function(t,e){var r=function(r){t.user=r.data,e.get(t.user.repos_url).then(o,n)},o=function(e){t.repos=e.data},n=function(e){t.error="Could not fetch the data."};e.get("https://api.github.com/users/konekoya").then(r,n),t.message="Hey Joshua!",t.repoSortOrder="-stargazers_count"};t.controller("MainController",["$scope","$http",e])}();
-!function(e){e(".main").onepage_scroll({sectionContainer:"section",easing:"ease",animationTime:1e3,pagination:!0,updateURL:!1,beforeMove:function(e){},afterMove:function(e){},loop:!1,keyboard:!0,responsiveFallback:!1,direction:"vertical"})}(jQuery);
+!function(e){e("#fullpage").fullpage({css3:!0,fitToSection:!0})}(jQuery);

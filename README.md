@@ -20,7 +20,7 @@ On weekends, he enjoys spending time with his family.
 
 
 #FIY
-http://www.jcsuzanne.com/
-https://pillarstudio.com/
-http://claudiocalautti.cc/
-http://erikzuuring.com/
+- http://www.jcsuzanne.com/
+- https://pillarstudio.com/
+- http://claudiocalautti.cc/
+- http://erikzuuring.com/
