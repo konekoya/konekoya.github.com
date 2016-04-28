@@ -7,4 +7,7 @@
     fitToSection: true
   });
 
+  // initialize wow.js
+  new WOW().init();
+
 }(jQuery));
