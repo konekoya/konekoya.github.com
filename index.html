@@ -15,9 +15,13 @@
 </head>
 
 <body ng-controller="MainController">
+  <ul id="navigation" class="nav  util-list-reset">
+      <li class="nav__item" data-menuanchor="avatar"><a class="util-rounded" href="#avatar"></a></li>
+      <li class="nav__item" data-menuanchor="intro"><a class="util-rounded" href="#intro"></a></li>
+  </ul>
   <div id="fullpage">
     <section class="section  avatar  util-full-viewport-heigh  util-flex-centered  util-text-centered" data-anchor="avatar">
-      <div class="avatar__body">
+      <div class="avatar__body  animated bounceInDown">
         <h1 class="avatar__title  avatar__text-item">Joshua</h1>
         <img class="avatar__img  util-rounded" ng-src="{{user.avatar_url}}" alt="Joshua's Picture">
         <span class="avatar__text  avatar__text-item">Profile</span>

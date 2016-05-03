@@ -1,3 +1,13 @@
+.util-list-reset {
+  margin: 0;
+  padding: 0;
+  
+  li {
+    list-style-type: none;
+  }
+
+}
+
 .util-rounded {
   border-radius: 50%;
 }

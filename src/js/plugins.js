@@ -14,6 +14,9 @@ var HEYJOSHUA = (function($) {
     // no need to include document.ready function here,
     // since we included the script before closing body tag
     $('#fullpage').fullpage({
+      menu: '#navigation',
+      navigation: true,
+      navigationTooltips: ['Home', 'About Me'],
       css3: true,
 
       // easing tool - https://matthewlein.com/ceaser/
