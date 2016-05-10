@@ -1,17 +1,22 @@
-*, *:before, *:after {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
-html, body {
+
+body,
+html {
   height: 100%;
   width: 100%; // onepage-scroll needs this line
 }
+
 body {
+  color: $white;
   font-family: $main-font;
+  font-size: 100%;
+  line-height: 2em;
   margin: 0 auto;
   padding: 0;
-  line-height: 2em;
-  font-size: 100%;
-  color: $white;
 }
 
 a {
