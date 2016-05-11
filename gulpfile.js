@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({lazy: true});
 var cssnano = require('cssnano');
 var runSequence = require('run-sequence');
+var gutil = require('gulp-util');
 
 // Pathes
 var src = './src/';
@@ -12,7 +13,7 @@ var config = {
 };
 
 gulp.task('styles', function() {
-  console.log('Compiling SCSS --> CSS');
+  log('Compiling SCSS --> CSS');
   return gulp
     .src(config.scss)
     .pipe($.sassGlob())
@@ -27,7 +28,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-  console.log('Analyzing source with JSHint');
+  log('Analyzing source with JSHint');
   return gulp
     .src(config.js)
     .pipe($.plumber())
@@ -41,7 +42,7 @@ gulp.task('scripts', function() {
 
 
 gulp.task('webserver', function() {
-  console.log('Running webserver and livereload');
+  log('Running webserver and livereload');
   $.connect.server({
     // the root parameter is needed
     root: __dirname,
@@ -50,7 +51,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch', function() {
-  console.log('listening file changes');
+  log('listening file changes');
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
