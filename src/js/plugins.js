@@ -1,12 +1,17 @@
-var HEYJOSHUA = (function($) {
+var JOSHUA = (function($) {
   'use strict';
+
+  var doc = document;
 
   function moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
-      var $el = $(el);
-      $el.on('click', function() {
-        $.fn.fullpage.moveTo('intro');
-      });
+      var trigger = doc.querySelector(el);
+      
+      if (trigger) {
+        trigger.addEventListener('click', function() {
+          $.fn.fullpage.moveTo('intro');
+        }, false);
+      }
     }
   }
 
@@ -24,7 +29,6 @@ var HEYJOSHUA = (function($) {
       fitToSection: true
     });
 
-
     moveToIntro('.avatar__img');
   }
 
@@ -37,5 +41,5 @@ var HEYJOSHUA = (function($) {
 
 
 $(document).ready(function() {
-  HEYJOSHUA.init();
+  JOSHUA.init();
 });
