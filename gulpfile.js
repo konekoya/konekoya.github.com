@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({lazy: true});
+var $ = require('gulp-load-plugins')({ lazy: true });
 var cssnano = require('cssnano');
 var runSequence = require('run-sequence');
 var gutil = require('gulp-util');
@@ -18,7 +18,7 @@ gulp.task('styles', function() {
     .src(config.scss)
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
     .pipe($.postcss([
       cssnano()
     ]))
