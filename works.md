@@ -10,3 +10,5 @@
   http://zenliving.tw/
 - Orbit backend
   http://joshua-4-5.tp.rulingcom.com/
+- CAACOOP
+  http://rss2.rulingcom.com/CN_CAACOOP/main.php
