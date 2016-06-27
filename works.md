@@ -16,5 +16,14 @@
 
 ## Templates 
 - http://www.rulingstyle.net/template/20150209-j1/
+- http://www.rulingstyle.net/template/20150109-j1/
+- http://www.rulingstyle.net/template/20150108-j1/
 - http://www.rulingstyle.net/template/20140626-j1/
 - http://www.rulingstyle.net/template/20140214-j1/
+- http://www.rulingstyle.net/template/20130620-j1/
+- http://www.rulingstyle.net/template/20130607-j1/
+- http://www.rulingstyle.net/template/20130614-j1/
+- http://www.rulingstyle.net/template/20130531-j1/
+- http://www.rulingstyle.net/template/20130201-j/
+- http://www.rulingstyle.net/template/20130123-j1/
+- http://www.rulingstyle.net/template/20121012-j1/
