@@ -96,6 +96,21 @@
   margin: auto; // need this line to fix center problem causing by fullpage.js
   font-size: 1.3rem;
 }
+
+.message {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#21242a+0,21242a+50,2a2d34+50,2a2d34+100 */
+  background: #21242a; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #21242a 0%, #21242a 50%, #2a2d34 50%, #2a2d34 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #21242a 0%,#21242a 50%,#2a2d34 50%,#2a2d34 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #21242a 0%,#21242a 50%,#2a2d34 50%,#2a2d34 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.disqus {
+  width: 80%;
+  margin: auto;
+}
+
 // link module
 .link-slide-in {
   position: relative;
