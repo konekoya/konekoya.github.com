@@ -92,9 +92,14 @@
 
 .intro__content {
   font-family: $sub-font;
-  width: 600px;
+  max-width: 600px;
   margin: auto; // need this line to fix center problem causing by fullpage.js
-  font-size: 1.3rem;
+  padding: 0 55px;
+  font-size: 1.1rem;
+  @media (min-width: 800px) {
+    font-size: 1.3rem;
+    padding: 0;
+  }
 }
 
 .message {

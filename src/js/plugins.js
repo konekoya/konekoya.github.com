@@ -21,7 +21,7 @@ var JOSHUA = (function($) {
     $('#fullpage').fullpage({
       menu: '#navigation',
       navigation: true,
-      navigationTooltips: ['Home sweet home', 'Yep, A lllllittle About Me', 'Do Drop me a Line, PLEASE!'],
+      navigationTooltips: ['Home sweet home', 'Yep, A lllllittle About Me'],
       css3: true,
 
       // easing tool - https://matthewlein.com/ceaser/
