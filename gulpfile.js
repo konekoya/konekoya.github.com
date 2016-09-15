@@ -8,8 +8,10 @@ var gutil = require('gulp-util');
 var src = './src/';
 var config = {
   build: './build/',
+  html: './index.html',
   scss: src + '/scss/**/*.scss',
-  js: src + 'js/**/*.js'
+  js: src + 'js/**/*.js',
+  images: src + 'images/**/*'
 };
 
 gulp.task('styles', function() {
@@ -40,24 +42,34 @@ gulp.task('scripts', function() {
     .pipe($.connect.reload());
 });
 
+gulp.task('images', function() {
+  log('Moving images source to build directory');
+  return gulp
+    .src(config.images)
+    .pipe(gulp.dest(config.build + 'images'))
+    .pipe($.connect.reload());
+});
+
 
 gulp.task('webserver', function() {
   log('Running webserver and livereload');
   $.connect.server({
     // the root parameter is needed
     root: __dirname,
-    livereload: true
+    livereload: true,
+    port: 3000
   });
 });
 
 gulp.task('watch', function() {
-  log('listening file changes');
+  log('Listening file changes');
+  gulp.watch(config.html)
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
 
 gulp.task('default', function() {
-  runSequence('styles', 'scripts', 'watch', 'webserver');
+  runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
 // Todo, fix the log function

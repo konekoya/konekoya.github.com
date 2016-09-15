@@ -35,9 +35,12 @@
   background-color: rgba($black, .8);
   font-size: .75rem;
 }
-// avatar section
+
+//*********************************
+// Avatar section
+//*********************************
+
 .avatar {
-  height: 100vh;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
   background: $theme-secondary;
   /* Old browsers */
@@ -49,32 +52,43 @@
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
+
+  &__title {
+    font-size: 2.25rem;
+    margin: 0 0 1rem;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &__img {
+    width: 140px;
+    height: 140px;
+  }
+
+  &__text-item {
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    color: $theme-subtle;
+    font-size: .875rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+  }
+
+  &__mouse {
+    width: 2rem;
+    fill: $white;
+    cursor: pointer;
+  }
 }
 
-.avatar__title {
-  font-size: 2.25rem;
-  margin: 0 0 1rem;
-  padding: 0;
-  text-transform: uppercase;
-}
+//*********************************
+// Intro section
+//*********************************
 
-.avatar__img {
-  width: 140px;
-  height: 140px;
-}
-
-.avatar__text-item {
-  display: block;
-  width: 100%;
-}
-
-.avatar__text {
-  color: $theme-subtle;
-  font-size: .875rem;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-}
-// intro section
 .intro {
   background-color: #000;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
@@ -116,7 +130,10 @@
   margin: auto;
 }
 
-// link module
+//*********************************
+// Link module
+//*********************************
+
 .link-slide-in {
   position: relative;
   text-decoration: none;

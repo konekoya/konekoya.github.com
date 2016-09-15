@@ -29,7 +29,7 @@ var JOSHUA = (function($) {
       fitToSection: true
     });
 
-    moveToIntro('.avatar__img');
+    moveToIntro('.avatar__mouse');
   }
 
   // public APIs
