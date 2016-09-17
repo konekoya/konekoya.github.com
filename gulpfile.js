@@ -1,12 +1,12 @@
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({ lazy: true });
-var cssnano = require('cssnano');
-var runSequence = require('run-sequence');
-var gutil = require('gulp-util');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')({ lazy: true });
+const cssnano = require('cssnano');
+const runSequence = require('run-sequence');
+const gutil = require('gulp-util');
 
 // Pathes
-var src = './src/';
-var config = {
+const src = './src/';
+const config = {
   build: './build/',
   html: './index.html',
   scss: src + '/scss/**/*.scss',
@@ -14,7 +14,7 @@ var config = {
   images: src + 'images/**/*'
 };
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   log('Compiling SCSS --> CSS');
   return gulp
     .src(config.scss)
@@ -29,11 +29,14 @@ gulp.task('styles', function() {
     .pipe($.connect.reload());
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', () => {
   log('Analyzing source with JSHint');
   return gulp
     .src(config.js)
     .pipe($.plumber())
+    .pipe($.babel({
+        presets: ['es2015']
+    }))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.uglify())
@@ -42,7 +45,7 @@ gulp.task('scripts', function() {
     .pipe($.connect.reload());
 });
 
-gulp.task('images', function() {
+gulp.task('images', () => {
   log('Moving images source to build directory');
   return gulp
     .src(config.images)
@@ -51,7 +54,7 @@ gulp.task('images', function() {
 });
 
 
-gulp.task('webserver', function() {
+gulp.task('webserver', () => {
   log('Running webserver and livereload');
   $.connect.server({
     // the root parameter is needed
@@ -61,18 +64,17 @@ gulp.task('webserver', function() {
   });
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   log('Listening file changes');
   gulp.watch(config.html)
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', function() {
+gulp.task('default', () => {
   runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
-// Todo, fix the log function
 // helper functions
 function log(msg) {
   if (typeof(msg) === 'object') {

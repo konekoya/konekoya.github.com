@@ -1,20 +1,20 @@
 (function() {
   'use strict';
-  var app = angular.module('githubViewer', []);
+  const app = angular.module('githubViewer', []);
 
-  var MainController = function($scope, $http) {
+  const MainController = ($scope, $http) => {
 
-    var onUserComplete = function(response) {
+    const onUserComplete = (response) => {
       $scope.user = response.data;
       $http.get($scope.user.repos_url)
         .then(onRepos, onError);
     };
 
-    var onRepos = function(response) {
+    const onRepos = (response) => {
       $scope.repos = response.data;
     };
 
-    var onError = function(error) {
+    const onError = (error) => {
       $scope.error = 'Could not fetch the data.';
     };
 

@@ -1,14 +1,14 @@
-var JOSHUA = (function($) {
+const JOSHUA = (function($) {
   'use strict';
 
-  var doc = document;
+  const doc = document;
 
   function moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
-      var trigger = doc.querySelector(el);
+      const trigger = doc.querySelector(el);
       
       if (trigger) {
-        trigger.addEventListener('click', function() {
+        trigger.addEventListener('click', () => {
           $.fn.fullpage.moveTo('intro');
         }, false);
       }
