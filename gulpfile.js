@@ -8,11 +8,24 @@ const gutil = require('gulp-util');
 const src = './src/';
 const config = {
   build: './build/',
+  dev: './dev/',
   html: './index.html',
   scss: src + '/scss/**/*.scss',
   js: src + 'js/**/*.js',
   images: src + 'images/**/*'
 };
+
+gulp.task('styles:dev', () => {
+  log('Compiling SCSS --> CSS');
+  return gulp
+    .src(config.scss)
+    .pipe($.sassGlob())
+    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
+    .pipe(gulp.dest(config.dev + 'css'))
+    .pipe($.connect.reload());
+});
+
 
 gulp.task('styles', () => {
   log('Compiling SCSS --> CSS');
@@ -25,7 +38,21 @@ gulp.task('styles', () => {
       cssnano()
     ]))
     .pipe($.concat('styles.css'))
-    .pipe(gulp.dest(config.build + 'css'))
+    .pipe(gulp.dest(config.dev + 'css'))
+    .pipe($.connect.reload());
+});
+
+gulp.task('scripts:dev', () => {
+  log('Analyzing source with JSHint');
+  return gulp
+    .src(config.js)
+    .pipe($.plumber())
+    .pipe($.babel({
+        presets: ['es2015']
+    }))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe(gulp.dest(config.build + 'js'))
     .pipe($.connect.reload());
 });
 
@@ -41,7 +68,15 @@ gulp.task('scripts', () => {
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.uglify())
     .pipe($.concat('scripts.js'))
-    .pipe(gulp.dest(config.build + 'js'))
+    .pipe(gulp.dest(config.dev + 'js'))
+    .pipe($.connect.reload());
+});
+
+gulp.task('images:dev', () => {
+  log('Moving images source to build directory');
+  return gulp
+    .src(config.images)
+    .pipe(gulp.dest(config.dev + 'images'))
     .pipe($.connect.reload());
 });
 
@@ -53,12 +88,27 @@ gulp.task('images', () => {
     .pipe($.connect.reload());
 });
 
+gulp.task('html:dev', () => {
+  log('Moving HTML to build directory');
+  return gulp
+    .src(config.html)
+    .pipe(gulp.dest(config.dev))
+    .pipe($.connect.reload());
+});
+
+gulp.task('html', () => {
+  log('Moving HTML to build directory');
+  return gulp
+    .src(config.html)
+    .pipe(gulp.dest(config.build))
+    .pipe($.connect.reload());
+});
 
 gulp.task('webserver', () => {
   log('Running webserver and livereload');
   $.connect.server({
     // the root parameter is needed
-    root: __dirname,
+    root: ['dev'],
     livereload: true,
     port: 3000
   });
@@ -69,10 +119,16 @@ gulp.task('watch', () => {
   gulp.watch(config.html)
   gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
+  gulp.watch(config.html, ['html']);
+});
+
+
+gulp.task('dev', () => {
+  runSequence('html:dev', 'images:dev', 'styles:dev', 'scripts:dev', 'watch', 'webserver');
 });
 
 gulp.task('default', () => {
-  runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
+  runSequence('html', 'images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
 // helper functions

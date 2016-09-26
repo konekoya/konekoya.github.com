@@ -1,14 +1,16 @@
-const JOSHUA = (function($) {
+'use strict';
+
+var JOSHUA = function ($) {
   'use strict';
 
-  const doc = document;
+  var doc = document;
 
   function moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
-      const trigger = doc.querySelector(el);
-      
+      var trigger = doc.querySelector(el);
+
       if (trigger) {
-        trigger.addEventListener('click', () => {
+        trigger.addEventListener('click', function () {
           $.fn.fullpage.moveTo('intro');
         }, false);
       }
@@ -23,7 +25,7 @@ const JOSHUA = (function($) {
       css3: true,
 
       // easing tool - https://matthewlein.com/ceaser/
-      easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)', 
+      easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)',
       fitToSection: true
     });
 
@@ -34,10 +36,8 @@ const JOSHUA = (function($) {
   return {
     init: init
   };
+}(jQuery);
 
-}(jQuery));
-
-
-$(document).ready(() => {
+$(document).ready(function () {
   JOSHUA.init();
 });
