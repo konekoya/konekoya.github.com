@@ -1,3 +1,9 @@
+import FetchGitHubApi from './fetch-github-api.js';
+
+
+// FetchGitHubApi.log();
+console.log(FetchGitHubApi);
+
 const JOSHUA = (function($) {
   'use strict';
 

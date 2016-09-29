@@ -2,6 +2,10 @@ const gulp = require('gulp');
 const $ = require('gulp-load-plugins')({ lazy: true });
 const runSequence = require('run-sequence');
 const gutil = require('gulp-util');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+
 
 // Pathes
 const src = './src/';
@@ -25,19 +29,32 @@ gulp.task('styles', () => {
 });
 
 
-gulp.task('scripts', () => {
-  log('Analyzing source with JSHint');
-  return gulp
-    .src(config.js)
-    .pipe($.plumber())
-    .pipe($.babel({
-        presets: ['es2015']
-    }))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.concat('scripts.js'))
-    .pipe(gulp.dest(config.build + 'js'));
+gulp.task('build', function () {
+    return browserify({
+      entries: src + 'js/plugins',
+      extensions: ['.js'],
+      debug: true
+    })
+      .transform('babelify', {presets: ['es2015']})
+      .bundle()
+      .pipe($.plumber())
+      .pipe(source('scripts.js'))
+      .pipe(gulp.dest(config.build + 'js'));
 });
+
+// gulp.task('scripts', () => {
+//   log('Analyzing source with JSHint');
+//   return gulp
+//     .src(config.js)
+//     .pipe($.plumber())
+//     .pipe($.babel({
+//         presets: ['es2015']
+//     }))
+//     .pipe($.jshint())
+//     .pipe($.jshint.reporter('jshint-stylish'))
+//     .pipe($.concat('scripts.js'))
+//     .pipe(gulp.dest(config.build + 'js'));
+// });
 
 gulp.task('images', () => {
   log('Moving images source to build directory');
@@ -60,12 +77,12 @@ gulp.task('webserver', () => {
 
 gulp.task('watch', () => {
   log('Listening to file changes');
-  gulp.watch(config.js, ['scripts']);
+  gulp.watch(config.js, ['build']);
   gulp.watch(config.scss, ['styles']);
 });
 
 gulp.task('default', () => {
-  runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
+  runSequence('images', 'styles', 'build', 'watch', 'webserver');
 });
 
 // helper functions
