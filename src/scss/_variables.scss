@@ -1,3 +1,8 @@
+// Font stacks
+@import 'https://fonts.googleapis.com/css?family=Lato';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+
 // colors
 
 $theme-primary: #182786;
@@ -8,5 +13,5 @@ $theme-subtle: #2e3e93;
 $white: #fff;
 $black: #000;
 
-$main-font: Montserrat, Helvetica Neue, sans-serif;
+$main-font: Lato, Helvetica Neue, sans-serif;
 $sub-font: Roboto, sans-serif;

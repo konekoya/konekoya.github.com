@@ -29,7 +29,7 @@ gulp.task('styles', () => {
 });
 
 
-gulp.task('build', function () {
+gulp.task('scripts', function () {
     return browserify({
       entries: src + 'js/plugins',
       extensions: ['.js'],
@@ -77,12 +77,12 @@ gulp.task('webserver', () => {
 
 gulp.task('watch', () => {
   log('Listening to file changes');
-  gulp.watch(config.js, ['build']);
+  gulp.watch(config.js, ['scripts']);
   gulp.watch(config.scss, ['styles']);
 });
 
 gulp.task('default', () => {
-  runSequence('images', 'styles', 'build', 'watch', 'webserver');
+  runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
 // helper functions

@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
 *,
 *::after,
 *::before {
@@ -10,7 +12,7 @@ html {
 
 body {
   color: #fff;
-  font-family: Montserrat, Helvetica Neue, sans-serif;
+  font-family: Lato, Helvetica Neue, sans-serif;
   font-size: 100%;
   line-height: 2em;
   margin: 0 auto;
@@ -109,6 +111,9 @@ a {
     width: 2rem;
     fill: #fff;
     cursor: pointer; }
+  .avatar__scrolldown {
+    display: block;
+    text-transform: uppercase; }
 
 .intro {
   background-color: #000;
@@ -147,10 +152,6 @@ a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
-
-.disqus {
-  width: 80%;
-  margin: auto; }
 
 .link-slide-in {
   position: relative;

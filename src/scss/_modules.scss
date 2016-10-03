@@ -83,6 +83,11 @@
     fill: $white;
     cursor: pointer;
   }
+
+  &__scrolldown {
+    display: block;
+    text-transform: uppercase;
+  }
 }
 
 //*********************************
@@ -125,10 +130,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.disqus {
-  width: 80%;
-  margin: auto;
-}
 
 //*********************************
 // Link module
