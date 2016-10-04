@@ -1,16 +1,13 @@
 import FetchGitHubApi from './fetch-github-api.js';
 
-const fetchApi = new FetchGitHubApi();
 
-fetchApi.log();
-
-// FetchGitHubApi.log();
-// console.log(FetchGitHubApi);
 
 const JOSHUA = (function($) {
   'use strict';
 
   const doc = document;
+  const fetchApi = new FetchGitHubApi();
+  const fetchedData = fetchApi.fetch();
 
   function moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
