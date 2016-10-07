@@ -31,7 +31,7 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', function () {
     return browserify({
-      entries: src + 'js/plugins',
+      entries: src + 'js/app',
       extensions: ['.js'],
       debug: true
     })

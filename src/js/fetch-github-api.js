@@ -1,14 +1,22 @@
+import { DOC, BODY, WINDOW_IS_LOADED } from './constants';
+
 export default class FetchGitHubApi {
 
+  addLoadedClass(className) {
+    BODY.classList.add(className);
+  }
 
-  setAvatarURL(url) {
-    console.log('Fetching the data');
+  setAvatarURL(URL) {
+    DOC.querySelector('.avatar__img')
+      .setAttribute('src', URL);
   }
 
   fetch() {
     $.get('https://api.github.com/users/konekoya', (result) => {
-      document.querySelector('.avatar__img')
-        .setAttribute('src', result.avatar_url);
+      if (result) {
+        this.setAvatarURL(result.avatar_url);
+        this.addLoadedClass(WINDOW_IS_LOADED);
+      }
     });
   }
 }

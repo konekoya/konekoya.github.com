@@ -1,17 +1,12 @@
-import FetchGitHubApi from './fetch-github-api.js';
-
-
+import { DOC } from './constants';
+import FetchGitHubApi from './fetch-github-api';
 
 const JOSHUA = (function($) {
   'use strict';
 
-  const doc = document;
-  const fetchApi = new FetchGitHubApi();
-  const fetchedData = fetchApi.fetch();
-
   function moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
-      const trigger = doc.querySelector(el);
+      const trigger = DOC.querySelector(el);
       
       if (trigger) {
         trigger.addEventListener('click', () => {
@@ -34,6 +29,9 @@ const JOSHUA = (function($) {
     });
 
     moveToIntro('.avatar__mouse');
+
+    const fetchApi = new FetchGitHubApi();
+    fetchApi.fetch();
   }
 
   // public APIs
@@ -44,6 +42,6 @@ const JOSHUA = (function($) {
 }(jQuery));
 
 
-$(document).ready(() => {
+$(DOC).ready(() => {
   JOSHUA.init();
 });
