@@ -90,6 +90,14 @@ a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
+  .avatar__profile-wrap {
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-delay: .5s;
+            transition-delay: .5s;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
   .avatar__title {
     font-size: 2.25rem;
     margin: 0 0 1rem;
@@ -103,7 +111,7 @@ a {
     display: block;
     width: 100%; }
   .avatar__text {
-    color: #2e3e93;
+    color: #3446a6;
     font-size: .875rem;
     letter-spacing: 10px;
     text-transform: uppercase; }
@@ -114,6 +122,11 @@ a {
   .avatar__scrolldown {
     display: block;
     text-transform: uppercase; }
+
+.window--is-loaded .avatar__profile-wrap {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
 
 .intro {
   background-color: #000;

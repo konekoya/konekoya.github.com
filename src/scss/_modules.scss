@@ -53,6 +53,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 
+  &__profile-wrap {
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: .5s;
+    transform: translate(0,-50%);
+  }
+
   &__title {
     font-size: 2.25rem;
     margin: 0 0 1rem;
@@ -72,7 +79,7 @@
   }
 
   &__text {
-    color: $theme-subtle;
+    color: lighten($theme-subtle, 5%);
     font-size: .875rem;
     letter-spacing: 10px;
     text-transform: uppercase;
@@ -87,6 +94,13 @@
   &__scrolldown {
     display: block;
     text-transform: uppercase;
+  }
+}
+
+.window--is-loaded {
+  .avatar__profile-wrap {
+    opacity: 1;
+    transform: translateY(0)
   }
 }
 
