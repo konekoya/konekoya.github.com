@@ -25,7 +25,16 @@ const JOSHUA = (function($) {
 
       // easing tool - https://matthewlein.com/ceaser/
       easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)', 
-      fitToSection: true
+      fitToSection: true,
+
+      // Temp, WIP: Add transition for the second page
+      // https://github.com/alvarotrigo/fullPage.js 
+      // afterLoad: (anchorLink, index) => {
+      //   switch(index) {
+      //     case 0:
+
+      //   }
+      // }
     });
 
     moveToIntro('.avatar__mouse');

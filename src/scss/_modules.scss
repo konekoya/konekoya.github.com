@@ -27,13 +27,26 @@
   }
 }
 
-#fp-nav ul li .fp-tooltip {
-  top: -9px !important;
-  padding: 0 8px;
-  border-radius: .125rem;
-  /* 2/16 */
-  background-color: rgba($black, .8);
-  font-size: .75rem;
+#fp-nav {
+  opacity: 0;
+  transition: all .3s ease;
+  transition-delay: 1.2s;
+  transform: translate(120%, 0);
+
+  .fp-tooltip {
+    top: -9px !important;
+    padding: 0 8px;
+    border-radius: .125rem;
+    background-color: rgba($black, .8);
+    font-size: .75rem;
+  }
+}
+
+.window--is-loaded {
+  #fp-nav {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 //*********************************
@@ -53,11 +66,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 
+
   &__profile-wrap {
     opacity: 0;
     transition: all .3s ease;
     transition-delay: .5s;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
   }
 
   &__title {
@@ -85,6 +99,13 @@
     text-transform: uppercase;
   }
 
+  &__hint-wrap {
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: 1s;
+    transform: translate(0, 20%);
+  }
+
   &__mouse {
     width: 2rem;
     fill: $white;
@@ -98,9 +119,16 @@
 }
 
 .window--is-loaded {
-  .avatar__profile-wrap {
-    opacity: 1;
-    transform: translateY(0)
+  .avatar {
+    &__profile-wrap {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    &__hint-wrap {
+      opacity: 1;
+      transform: translateY(0)
+    }
   }
 }
 

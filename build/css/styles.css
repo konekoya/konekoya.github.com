@@ -70,13 +70,25 @@ a {
     #fp-nav a span {
       background-color: transparent !important; }
 
-#fp-nav ul li .fp-tooltip {
-  top: -9px !important;
-  padding: 0 8px;
-  border-radius: .125rem;
-  /* 2/16 */
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: .75rem; }
+#fp-nav {
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0); }
+  #fp-nav .fp-tooltip {
+    top: -9px !important;
+    padding: 0 8px;
+    border-radius: .125rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: .75rem; }
+
+.window--is-loaded #fp-nav {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
 
 .avatar {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
@@ -115,6 +127,14 @@ a {
     font-size: .875rem;
     letter-spacing: 10px;
     text-transform: uppercase; }
+  .avatar__hint-wrap {
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s;
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); }
   .avatar__mouse {
     width: 2rem;
     fill: #fff;
@@ -124,6 +144,11 @@ a {
     text-transform: uppercase; }
 
 .window--is-loaded .avatar__profile-wrap {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
+
+.window--is-loaded .avatar__hint-wrap {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0); }
