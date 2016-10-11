@@ -3,7 +3,10 @@
 @import "base";
 @import "utils";
 
-// plugins
+// Components
+@import "components/avatar";
+@import "components/intro";
+@import "components/link";
 
-// modules
-@import "modules";
+// Thrid-party plugins
+@import "plugins/full-page-js";

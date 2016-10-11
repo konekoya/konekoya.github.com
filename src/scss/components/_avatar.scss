@@ -1,0 +1,77 @@
+.avatar {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
+  background: $theme-secondary;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, $theme-secondary 0%, $theme-secondary 50%, $theme-primary 50%, $theme-primary 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+
+  &__profile-wrap {
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: .5s;
+    transform: translate(0, -50%);
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    margin: 0 0 1rem;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &__img {
+    width: 140px;
+    height: 140px;
+  }
+
+  &__text-item {
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    color: lighten($theme-subtle, 5%);
+    font-size: .875rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+  }
+
+  &__hint-wrap {
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: 1s;
+    transform: translate(0, 20%);
+  }
+
+  &__mouse {
+    width: 2rem;
+    fill: $white;
+    cursor: pointer;
+  }
+
+  &__scrolldown {
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+.window--is-loaded {
+  .avatar {
+    &__profile-wrap {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    &__hint-wrap {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+}

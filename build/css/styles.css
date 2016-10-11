@@ -48,45 +48,6 @@ a {
 .util-full-viewport-heigh {
   height: 100vh; }
 
-#fp-nav {
-  position: fixed;
-  right: 1rem;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  z-index: 100; }
-  #fp-nav .active span {
-    background-color: #fff !important; }
-  #fp-nav a {
-    display: block;
-    margin: .7rem 0;
-    width: .9rem;
-    height: .9rem;
-    border: 3px solid #fff;
-    border-radius: 50%; }
-    #fp-nav a span {
-      background-color: transparent !important; }
-
-#fp-nav {
-  opacity: 0;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  -webkit-transition-delay: 1.2s;
-          transition-delay: 1.2s;
-  -webkit-transform: translate(120%, 0);
-          transform: translate(120%, 0); }
-  #fp-nav .fp-tooltip {
-    top: -9px !important;
-    padding: 0 8px;
-    border-radius: .125rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: .75rem; }
-
-.window--is-loaded #fp-nav {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0); }
-
 .avatar {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
   background: #2c3da7;
@@ -224,3 +185,42 @@ a {
 
 .link-slide-in-left::after {
   left: -100%; }
+
+#fp-nav {
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  z-index: 100; }
+  #fp-nav .active span {
+    background-color: #fff !important; }
+  #fp-nav a {
+    display: block;
+    margin: .7rem 0;
+    width: .9rem;
+    height: .9rem;
+    border: 3px solid #fff;
+    border-radius: 50%; }
+    #fp-nav a span {
+      background-color: transparent !important; }
+
+#fp-nav {
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0); }
+  #fp-nav .fp-tooltip {
+    top: -9px !important;
+    padding: 0 8px;
+    border-radius: .125rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: .75rem; }
+
+.window--is-loaded #fp-nav {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
