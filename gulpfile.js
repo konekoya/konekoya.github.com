@@ -28,33 +28,21 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(config.build + 'css'));
 });
 
-
 gulp.task('scripts', function () {
-    return browserify({
-      entries: src + 'js/app',
-      extensions: ['.js'],
-      debug: true
+  log('Transforming scripts');
+  return browserify({
+    entries: src + 'js/app',
+    extensions: ['.js'],
+    debug: true
+  })
+    .transform('babelify', {presets: ['es2015']})
+    .bundle()
+    .on('error', err => {
+      log('Browserify Error', err.message)
     })
-      .transform('babelify', {presets: ['es2015']})
-      .bundle()
-      .pipe($.plumber())
-      .pipe(source('scripts.js'))
-      .pipe(gulp.dest(config.build + 'js'));
+    .pipe(source('scripts.js'))
+    .pipe(gulp.dest(config.build + 'js'));
 });
-
-// gulp.task('scripts', () => {
-//   log('Analyzing source with JSHint');
-//   return gulp
-//     .src(config.js)
-//     .pipe($.plumber())
-//     .pipe($.babel({
-//         presets: ['es2015']
-//     }))
-//     .pipe($.jshint())
-//     .pipe($.jshint.reporter('jshint-stylish'))
-//     .pipe($.concat('scripts.js'))
-//     .pipe(gulp.dest(config.build + 'js'));
-// });
 
 gulp.task('images', () => {
   log('Moving images source to build directory');
@@ -62,7 +50,6 @@ gulp.task('images', () => {
     .src(config.images)
     .pipe(gulp.dest(config.build + 'images'));
 });
-
 
 gulp.task('webserver', () => {
   log('Running webserver and livereload');
