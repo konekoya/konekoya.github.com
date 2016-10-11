@@ -1,4 +1,4 @@
-import { DOC } from './constants';
+import { DOC, INTRO_IS_ACTIVE } from './constants';
 import FetchGitHubApi from './fetch-github-api';
 
 const JOSHUA = (function($) {
@@ -29,12 +29,12 @@ const JOSHUA = (function($) {
 
       // Temp, WIP: Add transition for the second page
       // https://github.com/alvarotrigo/fullPage.js 
-      // afterLoad: (anchorLink, index) => {
-      //   switch(index) {
-      //     case 0:
-
-      //   }
-      // }
+      afterLoad: (anchorLink, index) => {
+        const intro = DOC.querySelector('.intro');
+        if (anchorLink === 'intro') {
+          intro.classList.add(INTRO_IS_ACTIVE);
+        }
+      }
     });
 
     moveToIntro('.avatar__mouse');

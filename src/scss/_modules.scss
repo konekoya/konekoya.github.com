@@ -152,11 +152,15 @@
 }
 
 .intro__content {
+  opacity: 0;
   font-family: $sub-font;
   max-width: 600px;
   margin: auto; // need this line to fix center problem causing by fullpage.js
   padding: 0 55px;
   font-size: 1.1rem;
+  transition: all .3s ease;
+  transition-delay: .3s;
+  transform: translate(0, 120%);
   @media (min-width: 800px) {
     font-size: 1.3rem;
     padding: 0;
@@ -170,6 +174,15 @@
   background: -webkit-linear-gradient(-45deg,  #21242a 0%,#21242a 50%,#2a2d34 50%,#2a2d34 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg,  #21242a 0%,#21242a 50%,#2a2d34 50%,#2a2d34 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.intro--is-active {
+  .intro {
+    &__content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 

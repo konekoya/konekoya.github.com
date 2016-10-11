@@ -165,11 +165,18 @@ a {
   /* IE6-9 fallback on horizontal gradient */ }
 
 .intro__content {
+  opacity: 0;
   font-family: Roboto, sans-serif;
   max-width: 600px;
   margin: auto;
   padding: 0 55px;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+  -webkit-transform: translate(0, 120%);
+          transform: translate(0, 120%); }
   @media (min-width: 800px) {
     .intro__content {
       font-size: 1.3rem;
@@ -187,6 +194,11 @@ a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
+
+.intro--is-active .intro__content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
 
 .link-slide-in {
   position: relative;
