@@ -1,16 +1,7 @@
 .intro {
-  background-color: #000;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
-  background: #4c008d;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%);
-  /* Chrome10-25,Safari5.1-6 */
+  background: $purple;
   background: linear-gradient(135deg, #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#4c008d', endColorstr='#39006a',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
 }
 
 .intro__content {
@@ -22,7 +13,7 @@
   font-size: 1.1rem;
   transition: all .3s ease;
   transition-delay: .3s;
-  transform: translate(0, 120%);
+  transform: translate(0, 40%);
   @media (min-width: 800px) {
     font-size: 1.3rem;
     padding: 0;

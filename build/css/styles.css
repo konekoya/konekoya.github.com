@@ -51,15 +51,8 @@ a {
 .avatar {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
   background: #2c3da7;
-  /* Old browsers */
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
-  /* Chrome10-25,Safari5.1-6 */
   background: -webkit-linear-gradient(315deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
-  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
+  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%); }
   .avatar__profile-wrap {
     opacity: 0;
     -webkit-transition: all .3s ease;
@@ -86,13 +79,14 @@ a {
     letter-spacing: 10px;
     text-transform: uppercase; }
   .avatar__hint-wrap {
+    margin-top: 100px;
     opacity: 0;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     -webkit-transition-delay: 1s;
             transition-delay: 1s;
-    -webkit-transform: translate(0, 20%);
-            transform: translate(0, 20%); }
+    -webkit-transform: translate(0, 40%);
+            transform: translate(0, 40%); }
   .avatar__mouse {
     width: 2rem;
     fill: #fff;
@@ -103,27 +97,21 @@ a {
 
 .window--is-loaded .avatar__profile-wrap {
   opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0); }
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px); }
 
 .window--is-loaded .avatar__hint-wrap {
+  position: relative;
+  top: 60px;
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0); }
 
 .intro {
-  background-color: #000;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
   background: #4c008d;
-  /* Old browsers */
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: -webkit-linear-gradient(315deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
-  background: linear-gradient(135deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#4c008d', endColorstr='#39006a',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
+  background: linear-gradient(135deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%); }
 
 .intro__content {
   opacity: 0;
@@ -136,8 +124,8 @@ a {
   transition: all .3s ease;
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
-  -webkit-transform: translate(0, 120%);
-          transform: translate(0, 120%); }
+  -webkit-transform: translate(0, 40%);
+          transform: translate(0, 40%); }
   @media (min-width: 800px) {
     .intro__content {
       font-size: 1.3rem;

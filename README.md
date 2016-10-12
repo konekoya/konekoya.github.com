@@ -12,3 +12,7 @@ My personal website repo
 - http://claudiocalautti.cc/
 - http://erikzuuring.com/
 - http://hellobrandwidth.com
+
+## loading animation
+- https://codepen.io/wabeshew/pen/XdbBdM
+- https://github.com/tobiasahlin/SpinKit

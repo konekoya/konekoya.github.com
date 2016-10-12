@@ -1,15 +1,7 @@
 .avatar {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
   background: $theme-secondary;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, $theme-secondary 0%, $theme-secondary 50%, $theme-primary 50%, $theme-primary 99%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '$theme-secondary', endColorstr='$theme-primary',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
 
   &__profile-wrap {
     opacity: 0;
@@ -44,10 +36,11 @@
   }
 
   &__hint-wrap {
+    margin-top: 100px;
     opacity: 0;
     transition: all .3s ease;
     transition-delay: 1s;
-    transform: translate(0, 20%);
+    transform: translate(0, 40%);
   }
 
   &__mouse {
@@ -66,12 +59,14 @@
   .avatar {
     &__profile-wrap {
       opacity: 1;
-      transform: translateY(0)
+      transform: translateY(50px); // TEMP: not sure how to calulate this in RWD unit
     }
 
     &__hint-wrap {
+      position: relative;
+      top: 60px;
       opacity: 1;
-      transform: translateY(0)
+      transform: translateY(0);
     }
   }
 }
