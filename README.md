@@ -11,7 +11,6 @@ My personal website repo
 - https://pillarstudio.com/
 - http://claudiocalautti.cc/
 - http://erikzuuring.com/
-- http://hellobrandwidth.com
 
 ## loading animation
 - https://codepen.io/wabeshew/pen/XdbBdM

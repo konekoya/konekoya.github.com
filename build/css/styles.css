@@ -52,7 +52,10 @@ a {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
   background: #2c3da7;
   background: -webkit-linear-gradient(315deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
-  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%); }
+  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease; }
   .avatar__profile-wrap {
     opacity: 0;
     -webkit-transition: all .3s ease;
@@ -95,17 +98,18 @@ a {
     display: block;
     text-transform: uppercase; }
 
-.window--is-loaded .avatar__profile-wrap {
-  opacity: 1;
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px); }
-
-.window--is-loaded .avatar__hint-wrap {
-  position: relative;
-  top: 60px;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0); }
+.window--is-loaded .avatar {
+  opacity: 1; }
+  .window--is-loaded .avatar__profile-wrap {
+    opacity: 1;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px); }
+  .window--is-loaded .avatar__hint-wrap {
+    position: relative;
+    top: 60px;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
 
 .intro {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
