@@ -5,7 +5,7 @@ export default class FetchGitHubApi {
   addLoadedClass(className) {
     setTimeout(() => {
       BODY.classList.add(className);
-    }, 5000);
+    }, 1000);
   }
 
   setAvatarURL(URL) {

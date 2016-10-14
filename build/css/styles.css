@@ -212,24 +212,33 @@ a {
   background: #4c008d;
   background: -webkit-linear-gradient(315deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
   background: linear-gradient(135deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%); }
-
-.intro__content {
-  opacity: 0;
-  font-family: Roboto, sans-serif;
-  max-width: 600px;
-  margin: auto;
-  padding: 0 55px;
-  font-size: 1.1rem;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
-  -webkit-transform: translate(0, 40%);
-          transform: translate(0, 40%); }
-  @media (min-width: 800px) {
-    .intro__content {
-      font-size: 1.3rem;
-      padding: 0; } }
+  .intro__content {
+    font-family: Roboto, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 55px; }
+    @media (min-width: 800px) {
+      .intro__content {
+        font-size: 1.3rem;
+        padding: 0; } }
+  .intro__first-section {
+    opacity: 0;
+    font-size: 1.1rem;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+    -webkit-transform: translate(0, 40%);
+            transform: translate(0, 40%); }
+  .intro__second-section {
+    opacity: 0;
+    font-size: 1.1rem;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-delay: .9s;
+            transition-delay: .9s;
+    -webkit-transform: translate(0, 20%);
+            transform: translate(0, 20%); }
 
 .message {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#21242a+0,21242a+50,2a2d34+50,2a2d34+100 */
@@ -244,7 +253,12 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
 
-.intro--is-active .intro__content {
+.intro--is-active .intro__first-section {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
+
+.intro--is-active .intro__second-section {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0); }

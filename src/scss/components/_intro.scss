@@ -2,21 +2,32 @@
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
   background: $purple;
   background: linear-gradient(135deg, #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%);
-}
 
-.intro__content {
-  opacity: 0;
-  font-family: $sub-font;
-  max-width: 600px;
-  margin: auto; // need this line to fix center problem causing by fullpage.js
-  padding: 0 55px;
-  font-size: 1.1rem;
-  transition: all .3s ease;
-  transition-delay: .3s;
-  transform: translate(0, 40%);
-  @media (min-width: 800px) {
-    font-size: 1.3rem;
-    padding: 0;
+  &__content {
+    font-family: $sub-font;
+    max-width: 600px;
+    margin: auto; // need this line to fix center problem causing by fullpage.js
+    padding: 0 55px;
+    @media (min-width: 800px) {
+      font-size: 1.3rem;
+      padding: 0;
+    }
+  }
+
+  &__first-section {
+    opacity: 0;
+    font-size: 1.1rem;
+    transition: all .3s ease;
+    transition-delay: .3s;
+    transform: translate(0, 40%);
+  }
+
+  &__second-section {
+    opacity: 0;
+    font-size: 1.1rem;
+    transition: all .3s ease;
+    transition-delay: .9s;
+    transform: translate(0, 20%);
   }
 }
 
@@ -31,7 +42,12 @@
 
 .intro--is-active {
   .intro {
-    &__content {
+    &__first-section {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__second-section {
       opacity: 1;
       transform: translateY(0);
     }
