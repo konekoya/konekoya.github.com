@@ -25,7 +25,7 @@ export default class FetchGitHubApi {
   }
 
   fetch() {
-    $.get('https://api.github.com/users/konekoyaoo')
+    $.get('https://api.github.com/users/konekoya')
       .done((result) => {
         this.setAvatarURL(result.avatar_url);
         this.addLoadedClass(WINDOW_IS_LOADED);
