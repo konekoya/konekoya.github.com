@@ -1,4 +1,4 @@
-import { DOC, INTRO_IS_ACTIVE } from './constants';
+import { DOC, INTRO_IS_ACTIVE, GITHUB_API_URL } from './constants';
 import FetchGitHubApi from './fetch-github-api';
 
 const JOSHUA = (function($) {
@@ -40,7 +40,7 @@ const JOSHUA = (function($) {
     moveToIntro('.avatar__mouse');
 
     const fetchApi = new FetchGitHubApi();
-    fetchApi.fetch();
+    fetchApi.fetch(GITHUB_API_URL);
   }
 
   // public APIs

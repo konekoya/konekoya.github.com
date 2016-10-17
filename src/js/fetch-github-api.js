@@ -2,7 +2,6 @@ import {
   DOC, 
   BODY, 
   WINDOW_IS_LOADED,
-  GITHUB_API_URL,
   FALLBACK_AVATAR_URL
 } from './constants';
 
@@ -26,8 +25,8 @@ export default class FetchGitHubApi {
     return false;
   }
 
-  fetch() {
-    $.get('')
+  fetch(URL) {
+    $.get(URL)
       .done((result) => {
         this.setAvatarURL(result.avatar_url);
         this.addLoadedClass(WINDOW_IS_LOADED);
