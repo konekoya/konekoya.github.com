@@ -39,22 +39,25 @@
   }
 
   &__hint-wrap {
-    margin-top: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
     opacity: 0;
     transition: all .3s ease;
     transition-delay: 1s;
-    transform: translate(0, 40%);
+    transform: translate(-50%, 40%);
   }
 
   &__mouse {
     width: 2rem;
     fill: $white;
     cursor: pointer;
+    animation: scrolldown-effect 2s infinite;
   }
 
-  &__scrolldown {
+  &__scrolldown-text {
     display: block;
-    text-transform: uppercase;
+    font-size: .8rem;
   }
 }
 
@@ -67,10 +70,22 @@
     }
 
     &__hint-wrap {
-      position: relative;
-      top: 60px;
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, 0);
     }
   }
+}
+
+@keyframes scrolldown-effect {
+    0%, 20%, 50%, 80%,to {
+        transform: translateY(0)
+    }
+
+    40% {
+        transform: translateY(-7px)
+    }
+
+    60% {
+        transform: translateY(-3px)
+    }
 }

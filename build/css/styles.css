@@ -178,21 +178,25 @@ a {
     letter-spacing: 10px;
     text-transform: uppercase; }
   .avatar__hint-wrap {
-    margin-top: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
     opacity: 0;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     -webkit-transition-delay: 1s;
             transition-delay: 1s;
-    -webkit-transform: translate(0, 40%);
-            transform: translate(0, 40%); }
+    -webkit-transform: translate(-50%, 40%);
+            transform: translate(-50%, 40%); }
   .avatar__mouse {
     width: 2rem;
     fill: #fff;
-    cursor: pointer; }
-  .avatar__scrolldown {
+    cursor: pointer;
+    -webkit-animation: scrolldown-effect 2s infinite;
+            animation: scrolldown-effect 2s infinite; }
+  .avatar__scrolldown-text {
     display: block;
-    text-transform: uppercase; }
+    font-size: .8rem; }
 
 .window--is-loaded .avatar {
   opacity: 1; }
@@ -201,11 +205,31 @@ a {
     -webkit-transform: translateY(50px);
             transform: translateY(50px); }
   .window--is-loaded .avatar__hint-wrap {
-    position: relative;
-    top: 60px;
     opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+
+@-webkit-keyframes scrolldown-effect {
+  0%, 20%, 50%, 80%, to {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px); }
+  60% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px); } }
+
+@keyframes scrolldown-effect {
+  0%, 20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px); }
+  60% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px); } }
 
 .intro {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
