@@ -1,8 +1,9 @@
 import { 
   DOC, 
   BODY, 
-  WINDOW_IS_LOADED, 
-  FALLBACK_AVATAR_URL 
+  WINDOW_IS_LOADED,
+  GITHUB_API_URL,
+  FALLBACK_AVATAR_URL
 } from './constants';
 
 export default class FetchGitHubApi {
@@ -22,10 +23,11 @@ export default class FetchGitHubApi {
     let { responseText } = errorObj;
     responseText = JSON.parse(responseText)
     console.error(`ERROR MESSAGE: ${responseText.message}`);
+    return false;
   }
 
   fetch() {
-    $.get('https://api.github.com/users/konekoya')
+    $.get(GITHUB_API_URL)
       .done((result) => {
         this.setAvatarURL(result.avatar_url);
         this.addLoadedClass(WINDOW_IS_LOADED);
