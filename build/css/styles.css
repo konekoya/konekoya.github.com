@@ -145,8 +145,6 @@ a {
     opacity: 0; } }
 
 .avatar {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
-  background: #2c3da7;
   background: -webkit-linear-gradient(315deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
   background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 50%, #182786 50%, #182786 99%);
   opacity: 0;
@@ -154,20 +152,20 @@ a {
   transition: all 1s ease; }
   .avatar__profile-wrap {
     opacity: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     -webkit-transition-delay: .5s;
-            transition-delay: .5s;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%); }
+            transition-delay: .5s; }
   .avatar__title {
     font-size: 2.25rem;
     margin: 0 0 1rem;
     padding: 0;
     text-transform: uppercase; }
   .avatar__img {
-    width: 140px;
-    height: 140px; }
+    height: 140px;
+    width: 140px; }
   .avatar__text-item {
     margin-bottom: 2rem;
     display: block;
@@ -210,7 +208,11 @@ a {
             transform: translate(-50%, 0); }
 
 @-webkit-keyframes scrolldown-effect {
-  0%, 20%, 50%, 80%, to {
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
   40% {
@@ -221,7 +223,11 @@ a {
             transform: translateY(-3px); } }
 
 @keyframes scrolldown-effect {
-  0%, 20%, 50%, 80%, to {
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
   40% {

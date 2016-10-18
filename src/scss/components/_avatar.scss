@@ -1,6 +1,5 @@
 .avatar {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99 */
-  background: $theme-secondary;
+  // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c3da7+0,2c3da7+50,182786+50,182786+99
   background: linear-gradient(135deg, $theme-secondary 0%,$theme-secondary 50%,$theme-primary 50%,$theme-primary 99%);
 
   opacity: 0;
@@ -8,9 +7,9 @@
 
   &__profile-wrap {
     opacity: 0;
+    transform: translate(0, -50%);
     transition: all .3s ease;
     transition-delay: .5s;
-    transform: translate(0, -50%);
   }
 
   &__title {
@@ -21,8 +20,8 @@
   }
 
   &__img {
-    width: 140px;
     height: 140px;
+    width: 140px;
   }
 
   &__text-item {
@@ -64,6 +63,7 @@
 .window--is-loaded {
   .avatar {
     opacity: 1;
+
     &__profile-wrap {
       opacity: 1;
       transform: translateY(50px); // TEMP: not sure how to calulate this in RWD unit
@@ -75,17 +75,20 @@
     }
   }
 }
-
 @keyframes scrolldown-effect {
-    0%, 20%, 50%, 80%,to {
-        transform: translateY(0)
-    }
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateY(0);
+  }
 
-    40% {
-        transform: translateY(-7px)
-    }
+  40% {
+    transform: translateY(-7px);
+  }
 
-    60% {
-        transform: translateY(-3px)
-    }
+  60% {
+    transform: translateY(-3px);
+  }
 }
