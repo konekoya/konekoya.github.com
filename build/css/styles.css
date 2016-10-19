@@ -269,19 +269,10 @@ a {
             transition-delay: .9s;
     -webkit-transform: translate(0, 20%);
             transform: translate(0, 20%); }
-
-.message {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#21242a+0,21242a+50,2a2d34+50,2a2d34+100 */
-  background: #21242a;
-  /* Old browsers */
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #21242a 0%, #21242a 50%, #2a2d34 50%, #2a2d34 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-linear-gradient(315deg, #21242a 0%, #21242a 50%, #2a2d34 50%, #2a2d34 100%);
-  background: linear-gradient(135deg, #21242a 0%, #21242a 50%, #2a2d34 50%, #2a2d34 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21242a', endColorstr='#2a2d34',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
+  .intro__social-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
 
 .intro--is-active .intro__first-section {
   opacity: 1;
