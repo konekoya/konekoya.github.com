@@ -32,6 +32,13 @@
 
   &__social-links {
     display: flex;
+    align-items: center;
+  }
+
+  &__social-links-icon {
+    fill: $white;
+    width: 2rem;
+    margin-right: 1rem;
   }
 }
 

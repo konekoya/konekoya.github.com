@@ -55,6 +55,9 @@ a {
 .util-full-viewport-heigh {
   height: 100vh; }
 
+.util-hidden {
+  display: none; }
+
 .sk-folding-cube {
   margin: 20px auto;
   width: 40px;
@@ -272,7 +275,14 @@ a {
   .intro__social-links {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .intro__social-links-icon {
+    fill: #fff;
+    width: 2rem;
+    margin-right: 1rem; }
 
 .intro--is-active .intro__first-section {
   opacity: 1;
