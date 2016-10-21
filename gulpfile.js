@@ -5,7 +5,7 @@ const gutil = require('gulp-util');
 const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
-
+const eslint = require('gulp-eslint');
 
 // Pathes
 const src = './src/';
@@ -44,6 +44,15 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(config.build + 'js'));
 });
 
+gulp.task('lint', () => {
+  log('linting all JavaScripts');
+  return gulp
+    .src([config.js, '!node_modules/**'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
 gulp.task('images', () => {
   log('Moving images source to build directory');
   return gulp
@@ -68,7 +77,7 @@ gulp.task('watch', () => {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('default', () => {
+gulp.task('default', ['lint'], () => {
   runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
