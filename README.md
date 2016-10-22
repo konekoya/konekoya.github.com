@@ -5,8 +5,8 @@ My personal website repo
 - background effect is inspired by [hello](http://jlord.us/hello/)
 
 # Tech stack and tooling that are used to build this site
-- HTML5
-- CSS3
+- HTML5 - Sematic tags
+- CSS3 - Flex, Animation, Transition, Background Graident
 - SVG
 - jQuery, jQuery full page
 - ES6 - Arrow function, Module, Class, Constant and Let
@@ -15,7 +15,7 @@ My personal website repo
 - ESlint
 - SASS
 - Git, GitHub and GitHub API
-- Node.js and NPM
+- Node.js and NPM - lots of plugins...
 - JSON
 - Markdown
 
