@@ -23,7 +23,6 @@ export default class FetchGitHubApi {
     responseText = JSON.parse(responseText)
     /* eslint-disable no-console */
     console.error(`ERROR MESSAGE: ${responseText.message}`);
-
     return false;
   }
 
