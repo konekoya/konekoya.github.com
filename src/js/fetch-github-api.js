@@ -21,11 +21,14 @@ export default class FetchGitHubApi {
   handleErrorMessage(errorObj) {
     let { responseText } = errorObj;
     responseText = JSON.parse(responseText)
+    /* eslint-disable no-console */
     console.error(`ERROR MESSAGE: ${responseText.message}`);
+
     return false;
   }
 
   fetch(URL) {
+    // eslint-disable-next-line
     $.get(URL)
       .done((result) => {
         this.setAvatarURL(result.avatar_url);

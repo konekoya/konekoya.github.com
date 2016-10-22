@@ -55,7 +55,6 @@ const JOSHUA = (function($) {
 
 }(jQuery));
 
-
 $(DOC).ready(() => {
   JOSHUA.init();
 });

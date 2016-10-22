@@ -1,6 +1,9 @@
 {
-  "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
+  "parserOptions": {
+          "ecmaVersion": 6,
+          "sourceType": "module"
+      },
+  "extends": "",
   "plugins": [],
   "env": {
     "browser": true,
@@ -8,13 +11,14 @@
     "es6": true,
   },
   "globals": {
+    "$": false,
+    "jQuery": false
   },
   "rules": {
     "quotes": [2, "single", "avoid-escape"],
     "comma-dangle": [2, "never"],
     "indent": [2, 2],
     "object-curly-spacing": [2, "always"],
-    "array-bracket-spacing": [2, "always"],
     "no-undef": 2,
     "no-underscore-dangle": 0,
     "func-names": 0,
