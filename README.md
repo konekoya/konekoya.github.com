@@ -9,7 +9,7 @@ My personal website repo
 - CSS3 - Flex, Animation, Transition, Background Graident
 - SVG
 - jQuery, jQuery full page
-- ES6 - Arrow function, Module, Class, Constant and Let
+- ES6 - Arrow function, Module, Class, Constant and Let, function default paramenter
 - Gulp
 - Browserify
 - ESlint
