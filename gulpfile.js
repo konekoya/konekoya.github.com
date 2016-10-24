@@ -6,6 +6,7 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const eslint = require('gulp-eslint');
+const del = require('del');
 
 // Pathes
 const src = './src/';
@@ -77,11 +78,38 @@ gulp.task('watch', () => {
   gulp.watch(config.scss, ['styles']);
 });
 
+gulp.task('clean', function() {
+  var delconfig = [].concat(config.build);
+  log('Cleaning: ' + $.util.colors.green(delconfig));
+  del(delconfig);
+});
+
+gulp.task('clean-scripts', function() {
+  clean(config.build + 'js');
+});
+
+gulp.task('clean-styles', function() {
+  clean(config.build + 'css');
+});
+
+gulp.task('clean-fonts', function() {
+  clean(config.build + 'fonts');
+});
+
+gulp.task('clean-images', function() {
+  clean(config.build + 'images');
+});
+
 gulp.task('default', ['lint'], () => {
   runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
 });
 
 // helper functions
+function clean(path) {
+  log('Cleaning ' + $.util.colors.green(path));
+  del.sync(path);
+}
+
 function log(msg) {
   if (typeof(msg) === 'object') {
     for (var item in msg) {
