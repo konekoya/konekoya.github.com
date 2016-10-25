@@ -1,21 +1,23 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')({ lazy: true });
 const runSequence = require('run-sequence');
-const gutil = require('gulp-util');
 const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
-const eslint = require('gulp-eslint');
 const del = require('del');
+const cssnano = require('cssnano');
 
 // Pathes
 const src = './src/';
+const build = './build/'
 const config = {
   root: './',
   build: './build/',
-  scss: src + '/scss/**/*.scss',
-  js: src + 'js/**/*.js',
-  images: src + 'images/**/*'
+  scss: `${src}/scss/**/*.scss`,
+  js: `${src}js/**/*.js`,
+  images: `${src}images/**/*`,
+  buildCss: `${build}css/styles.css`,
+  buildJs: `${build}js/scripts.js`
 };
 
 gulp.task('styles', () => {
@@ -29,8 +31,18 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(config.build + 'css'));
 });
 
-gulp.task('scripts', function () {
-  log('Transforming scripts');
+gulp.task('deploy-styles', ['clean-styles', 'styles'], () => {
+  log('Uglifying styles for deploying');
+  return gulp
+    .src(config.buildCss)
+    .pipe($.postcss([
+      cssnano()
+    ]))
+    .pipe(gulp.dest(config.build + 'css'));
+});
+
+gulp.task('scripts', () => {
+  log('Transpling ES6 --> ES5');
   return browserify({
     entries: src + 'js/app',
     extensions: ['.js'],
@@ -45,13 +57,20 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(config.build + 'js'));
 });
 
+gulp.task('deploy-scripts', ['clean-scripts', 'scripts'], () => {
+  return gulp
+    .src(config.buildJs)
+    .pipe($.uglify())
+    .pipe(gulp.dest(`${config.build}js`));
+})
+
 gulp.task('lint', () => {
   log('linting all JavaScripts');
   return gulp
     .src([config.js, '!node_modules/**'])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe($.eslint())
+    .pipe($.eslint.format())
+    .pipe($.eslint.failAfterError());
 });
 
 gulp.task('images', () => {
@@ -69,6 +88,17 @@ gulp.task('webserver', () => {
       directoryListing: false,
       open: true,
       port: 3000
+    }));
+});
+
+gulp.task('deploy-webserver', () => {
+  log('Running webserver');
+  gulp.src(config.root)
+    .pipe($.webserver({
+      livereload: false,
+      directoryListing: false,
+      open: true,
+      port: 3001
     }));
 });
 
@@ -102,6 +132,11 @@ gulp.task('clean-images', function() {
 
 gulp.task('default', ['lint'], () => {
   runSequence('images', 'styles', 'scripts', 'watch', 'webserver');
+});
+
+
+gulp.task('deploy', ['deploy-scripts', 'deploy-styles', 'deploy-webserver'], () => {
+  log('Deploying task');
 });
 
 // helper functions
