@@ -3,7 +3,8 @@ import {
   INTRO_IS_ACTIVE,
   GITHUB_API_URL
 } from './constants';
-
+// import $ from 'jquery';
+// import 'fullpage.js/jquery.fullPage.js';
 import FetchGitHubApi from './fetch-github-api';
 
 const JOSHUA = (function($) {

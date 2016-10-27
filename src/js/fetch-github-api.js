@@ -1,9 +1,10 @@
-import { 
+import {
   DOC, 
   BODY, 
   WINDOW_IS_LOADED,
   FALLBACK_AVATAR_URL
 } from './constants';
+// import $ from 'jquery';
 
 export default class FetchGitHubApi {
 
