@@ -50,8 +50,9 @@ gulp.task('scripts', () => {
   })
     .transform('babelify', {presets: ['es2015']})
     .bundle()
-    .on('error', err => {
-      log('Browserify Error', err.message)
+    .on('error', (err) => {
+      log('Browserify Error', err.message);
+      console.log(err);
     })
     .pipe(source('scripts.js'))
     .pipe(gulp.dest(config.build + 'js'));

@@ -22,11 +22,5 @@ My personal website repo
 
 #FIY
 - http://www.theheysen.com.au/
-- http://www.jcsuzanne.com/
-- https://pillarstudio.com/
 - http://claudiocalautti.cc/
 - http://erikzuuring.com/
-
-## loading animation
-- https://codepen.io/wabeshew/pen/XdbBdM
-- https://github.com/tobiasahlin/SpinKit
