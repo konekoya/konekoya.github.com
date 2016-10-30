@@ -3,11 +3,11 @@ import {
   INTRO_IS_ACTIVE,
   GITHUB_API_URL
 } from './constants';
-// import $ from 'jquery';
-// import 'fullpage.js/jquery.fullPage.js';
+import $ from 'jquery';
+import 'fullpage.js';
 import FetchGitHubApi from './fetch-github-api';
 
-const JOSHUA = (function($) {
+const JOSHUA = (function() {
   'use strict';
 
   function moveToIntro(el) {
@@ -54,7 +54,7 @@ const JOSHUA = (function($) {
     init: init
   };
 
-}(jQuery));
+}());
 
 $(DOC).ready(() => {
   JOSHUA.init();

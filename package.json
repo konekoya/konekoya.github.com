@@ -4,7 +4,7 @@
   "description": "My personal website repo",
   "main": "index.js",
   "dependencies": {
-    "fullpage.js": "^2.8.6",
+    "fullpage.js": "^2.8.8",
     "jquery": "^3.1.1"
   },
   "devDependencies": {
@@ -21,7 +21,6 @@
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^3.0.1",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-sass-glob": "0.0.8",

@@ -4,7 +4,7 @@ import {
   WINDOW_IS_LOADED,
   FALLBACK_AVATAR_URL
 } from './constants';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 export default class FetchGitHubApi {
 
