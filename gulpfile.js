@@ -17,19 +17,21 @@ const config = {
   js: `${src}js/**/*.js`,
   images: `${src}images/**/*`,
   buildCss: `${build}css/styles.css`,
-  buildJs: `${build}js/scripts.js`
+  buildJs: `${build}js/scripts.js`,
+  fullpageCss: './node_mdoules/fullpage.js/dist/jquery.fullpage.min.css'
 };
 
-gulp.task('styles', () => {
+var content = gulp.task('styles', () => {
   log('Compiling SCSS --> CSS');
   return gulp
-    .src(config.scss)
+    .src([config.fullpageCss, config.scss])
     .pipe($.sassGlob())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
     .pipe($.concat('styles.css'))
     .pipe(gulp.dest(config.build + 'css'));
 });
+
 
 gulp.task('deploy-styles', ['clean-styles', 'styles'], () => {
   log('Uglifying styles for deploying');
