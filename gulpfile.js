@@ -26,7 +26,12 @@ var content = gulp.task('styles', () => {
   return gulp
     .src([config.fullpageCss, config.scss])
     .pipe($.sassGlob())
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass({
+      "indentedSyntax": true,
+       "includePaths": [
+         "./node_modules/fullpage.js/dist/jquery.fullpage.min.css"
+       ]
+    }).on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
     .pipe($.concat('styles.css'))
     .pipe(gulp.dest(config.build + 'css'));
