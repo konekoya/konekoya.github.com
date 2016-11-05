@@ -54,7 +54,6 @@ gulp.task('scripts', () => {
     .bundle()
     .on('error', (err) => {
       log('Browserify Error', err.message);
-      console.log(err);
     })
     .pipe(source('scripts.js'))
     .pipe(gulp.dest(config.build + 'js'));
