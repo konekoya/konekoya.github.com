@@ -38,7 +38,7 @@
   "scripts": {
     "lint": "esw ./src/js ./gulpfile.js --color",
     "lint:watch": "npm run lint -- --watch",
-    "precommit": "npm run lint"
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",

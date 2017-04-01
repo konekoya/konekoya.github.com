@@ -153,7 +153,7 @@ function clean(path) {
 function log(msg) {
   if (typeof msg === 'object') {
     for (const item in msg) {
-      if (msg.hasOwnProperty(item)) { // eslint-disable-line
+      if (msg.hasOwnProperty(item)) {
         $.util.log($.util.colors.green(msg(item)));
       }
     }
