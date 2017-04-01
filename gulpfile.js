@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-use-before-define */
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')({ lazy: true });
 const runSequence = require('run-sequence');
 const browserify = require('browserify');
-const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const del = require('del');
 const cssnano = require('cssnano');
@@ -21,7 +22,7 @@ const config = {
   fullpageCss: './node_mdoules/fullpage.js/dist/jquery.fullpage.min.css'
 };
 
-var content = gulp.task('styles', () => {
+gulp.task('styles', () => {
   log('Compiling SCSS --> CSS');
   return gulp
     .src([config.fullpageCss, config.scss])
@@ -29,7 +30,7 @@ var content = gulp.task('styles', () => {
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
     .pipe($.concat('styles.css'))
-    .pipe(gulp.dest(config.build + 'css'));
+    .pipe(gulp.dest(`${config.build}css`));
 });
 
 
@@ -40,31 +41,29 @@ gulp.task('deploy-styles', ['clean-styles', 'styles'], () => {
     .pipe($.postcss([
       cssnano()
     ]))
-    .pipe(gulp.dest(config.build + 'css'));
+    .pipe(gulp.dest(`${config.build}css`));
 });
 
 gulp.task('scripts', () => {
   log('Transpling ES6 --> ES5');
   return browserify({
-    entries: src + 'js/app',
+    entries: `${src}js/app`,
     extensions: ['.js'],
     debug: true
   })
-    .transform('babelify', {presets: ['es2015']})
+    .transform('babelify', { presets: ['es2015'] })
     .bundle()
     .on('error', (err) => {
       log(`Browserify Error', ${err}`);
     })
     .pipe(source('scripts.js'))
-    .pipe(gulp.dest(config.build + 'js'));
+    .pipe(gulp.dest(`${config.build}js`));
 });
 
-gulp.task('deploy-scripts', ['clean-scripts', 'scripts'], () => {
-  return gulp
+gulp.task('deploy-scripts', ['clean-scripts', 'scripts'], () => gulp
     .src(config.buildJs)
     .pipe($.uglify())
-    .pipe(gulp.dest(`${config.build}js`));
-})
+    .pipe(gulp.dest(`${config.build}js`)))
 
 gulp.task('lint', () => {
   log('linting all JavaScripts');
@@ -79,7 +78,7 @@ gulp.task('images', () => {
   log('Moving images source to build directory');
   return gulp
     .src(config.images)
-    .pipe(gulp.dest(config.build + 'images'));
+    .pipe(gulp.dest(`${config.build}images`));
 });
 
 gulp.task('webserver', () => {
@@ -110,26 +109,26 @@ gulp.task('watch', () => {
   gulp.watch(config.scss, ['styles']);
 });
 
-gulp.task('clean', function() {
-  var delconfig = [].concat(config.build);
-  log('Cleaning: ' + $.util.colors.green(delconfig));
+gulp.task('clean', () => {
+  const delconfig = [].concat(config.build);
+  log(`Cleaning: ${$.util.colors.green(delconfig)}`);
   del(delconfig);
 });
 
-gulp.task('clean-scripts', function() {
-  clean(config.build + 'js');
+gulp.task('clean-scripts', () => {
+  clean(`${config.build}js`);
 });
 
-gulp.task('clean-styles', function() {
-  clean(config.build + 'css');
+gulp.task('clean-styles', () => {
+  clean(`${config.build}css`);
 });
 
-gulp.task('clean-fonts', function() {
-  clean(config.build + 'fonts');
+gulp.task('clean-fonts', () => {
+  clean(`${config.build}fonts`);
 });
 
-gulp.task('clean-images', function() {
-  clean(config.build + 'images');
+gulp.task('clean-images', () => {
+  clean(`${config.build}images`);
 });
 
 gulp.task('default', ['lint'], () => {
@@ -137,20 +136,24 @@ gulp.task('default', ['lint'], () => {
 });
 
 
-gulp.task('deploy', ['deploy-scripts', 'deploy-styles', 'deploy-webserver'], () => {
+gulp.task('deploy',
+  [
+    'deploy-scripts',
+    'deploy-styles',
+    'deploy-webserver'], () => {
   log('Deploying task');
 });
 
 // helper functions
 function clean(path) {
-  log('Cleaning ' + $.util.colors.green(path));
+  log(`Cleaning ${$.util.colors.green(path)}`);
   del.sync(path);
 }
 
 function log(msg) {
-  if (typeof(msg) === 'object') {
-    for (var item in msg) {
-      if (msg.hasOwnProperty(item)) {
+  if (typeof msg === 'object') {
+    for (const item in msg) {
+      if (msg.hasOwnProperty(item)) { // eslint-disable-line
         $.util.log($.util.colors.green(msg(item)));
       }
     }
