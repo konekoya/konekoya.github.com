@@ -9,7 +9,7 @@ export default class FullpageConfig {
   moveToIntro (el) {
     if (typeof el === 'string' && el.length > 0) {
       const trigger = DOC.querySelector(el);
-      
+
       if (trigger) {
         trigger.addEventListener('click', () => {
           $.fn.fullpage.moveTo('intro');
@@ -29,18 +29,15 @@ export default class FullpageConfig {
       easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)',
 
       // Temp, WIP: Add transition for the second page
-      // https://github.com/alvarotrigo/fullPage.js 
-      afterLoad: (anchorLink, index) => {
+      // https://github.com/alvarotrigo/fullPage.js
+      afterLoad: (anchorLink) => {
         const intro = DOC.querySelector('.intro');
         if (anchorLink === 'intro') {
           intro.classList.add(INTRO_IS_ACTIVE);
         }
       }
     });
-    
+
     this.moveToIntro('.avatar__mouse');
   }
 }
-
-
-

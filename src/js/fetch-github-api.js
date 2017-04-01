@@ -1,6 +1,6 @@
 import {
-  DOC, 
-  BODY, 
+  DOC,
+  BODY,
   WINDOW_IS_LOADED,
   FALLBACK_AVATAR_URL
 } from './constants';
@@ -41,4 +41,3 @@ export default class FetchGitHubApi {
       });
   }
 }
-

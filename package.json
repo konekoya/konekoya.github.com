@@ -15,6 +15,8 @@
     "browserify": "^13.1.0",
     "cssnano": "^3.4.0",
     "del": "^2.2.0",
+    "eslint": "^3.19.0",
+    "eslint-watch": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
@@ -33,7 +35,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./src/js",
+    "lint:watch": "esw -w ./src/js"
   },
   "repository": {
     "type": "git",
