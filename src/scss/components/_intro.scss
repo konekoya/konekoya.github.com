@@ -1,7 +1,13 @@
 .intro {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c008d+0,4c008d+51,39006a+51,39006a+100 */
   background: $purple;
-  background: linear-gradient(135deg, #4c008d 0%,#4c008d 51%,#39006a 51%,#39006a 100%);
+  background: linear-gradient(
+    135deg,
+    #4c008d 0%,
+    #4c008d 51%,
+    #39006a 51%,
+    #39006a 100%
+  );
 
   &__content {
     font-family: $sub-font;
@@ -17,16 +23,16 @@
   &__first-section {
     opacity: 0;
     font-size: 1.1rem;
-    transition: all .3s ease;
-    transition-delay: .3s;
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
     transform: translate(0, 40%);
   }
 
   &__second-section {
     opacity: 0;
     font-size: 1.1rem;
-    transition: all .3s ease;
-    transition-delay: .6s;
+    transition: all 0.3s ease;
+    transition-delay: 0.6s;
     transform: translate(0, 20%);
   }
 
@@ -34,8 +40,8 @@
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: all .3s ease;
-    transition-delay: .9s;
+    transition: all 0.3s ease;
+    transition-delay: 0.9s;
     transform: translate(0, 40%);
   }
 
@@ -43,10 +49,10 @@
     fill: $white;
     width: 1.3rem;
     margin-right: 1rem;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     &:hover {
-      opacity: .7;
-      transition: all .3s ease;
+      opacity: 0.7;
+      transition: all 0.3s ease;
     }
   }
 }
