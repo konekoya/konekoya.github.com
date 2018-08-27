@@ -1,8 +1,8 @@
-import { DOC, GITHUB_API_URL } from './constants';
+import { GITHUB_API_URL } from './constants';
 import FetchGitHubApi from './fetch-github-api';
 import FullpageConfig from './fullpage-config';
 
-const JOSHUA = (function() {
+const KONEKOYA = (function() {
   'use strict';
 
   function init() {
@@ -17,9 +17,8 @@ const JOSHUA = (function() {
   return {
     init: init
   };
-
 }());
 
-DOC.addEventListener('DOMContentLoaded', () => {
-  JOSHUA.init();
+document.addEventListener('DOMContentLoaded', () => {
+  KONEKOYA.init();
 });

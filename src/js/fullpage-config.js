@@ -1,24 +1,26 @@
-import {
-  DOC,
-  INTRO_IS_ACTIVE
-} from './constants';
 import $ from 'jquery';
 import 'fullpage.js';
 
+import { INTRO_IS_ACTIVE } from './constants';
+
 export default class FullpageConfig {
-  moveToIntro (el) {
+  moveToIntro(el) {
     if (typeof el === 'string' && el.length > 0) {
-      const trigger = DOC.querySelector(el);
+      const trigger = document.querySelector(el);
 
       if (trigger) {
-        trigger.addEventListener('click', () => {
-          $.fn.fullpage.moveTo('intro');
-        }, false);
+        trigger.addEventListener(
+          'click',
+          () => {
+            $.fn.fullpage.moveTo('intro');
+          },
+          false,
+        );
       }
     }
   }
 
-  Initialize () {
+  Initialize() {
     $('#fullpage').fullpage({
       menu: '#navigation',
       navigation: true,
@@ -28,14 +30,14 @@ export default class FullpageConfig {
       // easing tool - https://matthewlein.com/ceaser/
       easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)',
 
-      // Temp, WIP: Add transition for the second page
+      // TODO: Add transition for the second page
       // https://github.com/alvarotrigo/fullPage.js
       afterLoad: (anchorLink) => {
-        const intro = DOC.querySelector('.intro');
+        const intro = document.querySelector('.intro');
         if (anchorLink === 'intro') {
           intro.classList.add(INTRO_IS_ACTIVE);
         }
-      }
+      },
     });
 
     this.moveToIntro('.avatar__mouse');
