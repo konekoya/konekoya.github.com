@@ -9,13 +9,9 @@ export default class FullpageConfig {
       const trigger = document.querySelector(el);
 
       if (trigger) {
-        trigger.addEventListener(
-          'click',
-          () => {
-            $.fn.fullpage.moveTo('intro');
-          },
-          false,
-        );
+        trigger.addEventListener('click', () => {
+          $.fn.fullpage.moveTo('intro');
+        });
       }
     }
   }
@@ -30,14 +26,14 @@ export default class FullpageConfig {
       // easing tool - https://matthewlein.com/ceaser/
       easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)',
 
-      // TODO: Add transition for the second page
+      // Add transition for the second page
       // https://github.com/alvarotrigo/fullPage.js
       afterLoad: (anchorLink) => {
         const intro = document.querySelector('.intro');
         if (anchorLink === 'intro') {
           intro.classList.add(INTRO_IS_ACTIVE);
         }
-      },
+      }
     });
 
     this.moveToIntro('.avatar__mouse');
