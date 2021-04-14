@@ -2,7 +2,7 @@
 
 Source code of konekoya.github.com, this site is host on GitHub as well
 
-#credit
+## credit
 
 - Page background effect is inspired by [hello](http://jlord.us/hello/)
 
