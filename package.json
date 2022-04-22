@@ -4,7 +4,7 @@
   "description": "My personal website repo",
   "main": "index.js",
   "dependencies": {
-    "fullpage.js": "^2.8.8",
+    "fullpage.js": "^4.0.5",
     "jquery": "^3.5.0"
   },
   "devDependencies": {
