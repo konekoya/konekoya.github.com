@@ -25,13 +25,17 @@ Personal website, powered by React + Vite + TypeScript and deployed to https://k
 
 Deploys automatically on push to `master`.
 
-## Vercel Preview Deployments (optional)
+## Netlify Deploy Previews (optional)
 
-This repo includes a `vercel.json` so it can be connected to Vercel for per‑PR preview URLs.
+This repo includes a `netlify.toml` so it can be connected to Netlify for per‑PR Deploy Previews.
 
 How to enable previews:
-- Install the Vercel GitHub app and import this repository.
-- Framework will be detected (Vite). Build command `npm run build`, output `dist/`.
-- Vercel will post a preview URL on each pull request automatically.
+- Sign up/in at https://app.netlify.com and click “Add new site” → “Import an existing project”.
+- Connect GitHub and select `konekoya/konekoya.github.com`.
+- Netlify should auto-detect Vite; if not:
+  - Build command: `npm run build`
+  - Publish directory: `dist`
+- Deploy contexts → ensure “Deploy Previews” are enabled for pull requests.
+- Netlify will post a preview URL on each PR automatically.
 
-Routing: `vercel.json` rewrites all routes to `/index.html` to support SPA deep links.
+Routing: `netlify.toml` adds a catch‑all redirect to `/index.html` for SPA deep links.
