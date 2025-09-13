@@ -1,41 +1,41 @@
-import { useEffect, useMemo, useState } from 'react'
-import styles from './AvatarSection.module.css'
-import reactLogo from '../assets/react.svg'
+import { useEffect, useMemo, useState } from 'react';
+import styles from './AvatarSection.module.css';
+import reactLogo from '../assets/react.svg';
 
-const GITHUB_API_URL = 'https://api.github.com/users/konekoya'
+const GITHUB_API_URL = 'https://api.github.com/users/konekoya';
 
 export function AvatarSection() {
-  const [avatarUrl, setAvatarUrl] = useState<string>('')
-  const [loaded, setLoaded] = useState(false)
+  const [avatarUrl, setAvatarUrl] = useState<string>('');
+  const [loaded, setLoaded] = useState(false);
 
-  const fallback = useMemo(() => reactLogo, [])
+  const fallback = useMemo(() => reactLogo, []);
 
   useEffect(() => {
-    let canceled = false
+    let canceled = false;
 
     async function run() {
       try {
-        const res = await fetch(GITHUB_API_URL)
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        const data = await res.json()
+        const res = await fetch(GITHUB_API_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
         if (!canceled) {
-          setAvatarUrl(data?.avatar_url || fallback)
+          setAvatarUrl(data?.avatar_url || fallback);
         }
-      } catch (e) {
-        if (!canceled) setAvatarUrl(fallback)
+      } catch {
+        if (!canceled) setAvatarUrl(fallback);
       } finally {
         // add a tiny delay to let CSS transitions feel intentional
         setTimeout(() => {
-          if (!canceled) setLoaded(true)
-        }, 300)
+          if (!canceled) setLoaded(true);
+        }, 300);
       }
     }
 
-    run()
+    run();
     return () => {
-      canceled = true
-    }
-  }, [fallback])
+      canceled = true;
+    };
+  }, [fallback]);
 
   return (
     <section className={`${styles.avatar} ${loaded ? styles.isLoaded : ''}`}>
@@ -49,6 +49,5 @@ export function AvatarSection() {
         <span className={styles.scrollText}>Scroll down</span>
       </div>
     </section>
-  )
+  );
 }
-

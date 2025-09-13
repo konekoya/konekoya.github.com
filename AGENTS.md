@@ -4,7 +4,7 @@ Scope: Entire repository. These guidelines apply to all changes unless a more sp
 
 ## Tech + Tooling
 
-- Primary app lives at repo root (Vite + React + TypeScript, Node 20 via `.nvmrc`).
+- Primary app lives at repo root (Vite + React + TypeScript, Node 22 via `.nvmrc`).
 - Deploy via GitHub Actions at `.github/workflows/deploy-pages.yml`.
 - Do not re-introduce the legacy Gulp stack.
 
