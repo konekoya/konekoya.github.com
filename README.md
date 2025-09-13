@@ -39,3 +39,6 @@ How to enable previews:
 - Netlify will post a preview URL on each PR automatically.
 
 Routing: `netlify.toml` adds a catch‑all redirect to `/index.html` for SPA deep links.
+
+Note:
+- Production remains on GitHub Pages via the Actions workflow; Netlify is used only for PR previews. You can disable “Production deploys” on the Netlify site to avoid confusion.
