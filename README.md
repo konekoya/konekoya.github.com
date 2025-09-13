@@ -44,9 +44,11 @@ Prebuilt assets exist in `build/`, so you can open `index.html` directly in a br
 For live reload and rebuilding (requires legacy toolchain):
 
 1) Install Node 12–14 era compatible toolchain (due to Gulp 3/Babel 6). Modern Node may fail to install native deps for Gulp 3.
-2) Install dependencies: `yarn` (or `npm install`).
+2) Install dependencies: `npm install`.
 3) Start dev tasks + webserver: `gulp` (serves at http://localhost:3000 with watch).
 4) Deploy bundle (minified): `gulp deploy` (serves at http://localhost:3001).
+
+Note: This repo now prefers npm over Yarn. Yarn lockfile has been removed; use npm scripts such as `npm run lint` and `npm run lint -- --watch`.
 
 Note: The site fetches `https://api.github.com/users/konekoya` at runtime; if the request is throttled or blocked, a fallback avatar is used (see Findings below).
 
