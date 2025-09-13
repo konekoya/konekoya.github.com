@@ -17,7 +17,7 @@ Personal website, powered by React + Vite + TypeScript and deployed to https://k
 
 ## Scripts
 
-- `nvm use`
+- `nvm use` (Node 22)
 - `npm install`
 - `npm run dev` — start dev server
 - `npm run build` — build production bundle
