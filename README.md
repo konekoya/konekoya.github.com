@@ -108,11 +108,22 @@ Phased Roadmap:
 1) Stabilize current repo
    - Add actual fallback avatar image and fix `gulpfile.js` typos for short-term reliability.
 2) Vite bootstrap
-   - Create `vite` app, move `index.html` content into React components, preserve existing styles initially.
+   - Create a Vite + React + TS app under `web/`, move `index.html` content into React components, preserve existing styles initially.
 3) Replace jQuery/fullPage.js
    - Implement sections with semantic components and CSS scroll-snap; add intersection observers for reveal classes.
 4) Cleanup
    - Remove Gulp/Browserify/Babel 6; migrate lint rules; add GitHub Actions.
+
+## Next‑Gen App (Vite + React + TS)
+
+- Location: `web/`
+- Node: `nvm use` inside `web/` (uses Node 20 via `.nvmrc`)
+- Commands:
+  - `npm install`
+  - `npm run dev` (dev server)
+  - `npm run build` / `npm run preview`
+
+Note: The legacy root uses Node 14 (root `.nvmrc`) for Gulp 3, while the new Vite app uses Node 20 (per `web/.nvmrc`).
 
 ## Contributing
 
