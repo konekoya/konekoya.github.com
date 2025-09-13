@@ -4,9 +4,9 @@ Scope: Entire repository. These guidelines apply to all changes unless a more sp
 
 ## Tech + Tooling
 
-- Primary app is under `web/` (Vite + React + TypeScript, Node 20).
-- Deploy via GitHub Actions workflow at `.github/workflows/deploy-pages.yml`.
-- Do not re-introduce the legacy Gulp stack or root `index.html`.
+- Primary app lives at repo root (Vite + React + TypeScript, Node 20 via `.nvmrc`).
+- Deploy via GitHub Actions at `.github/workflows/deploy-pages.yml`.
+- Do not re-introduce the legacy Gulp stack.
 
 ## Coding Conventions (web/)
 
@@ -19,7 +19,7 @@ Scope: Entire repository. These guidelines apply to all changes unless a more sp
 - Accessibility: Provide `aria-*` labels, semantic tags, and keyboard focus states.
 - Assets: Put static assets in `web/public/` if they must be served as-is; otherwise import via modules.
 
-## Project Structure (web/)
+## Project Structure
 
 - `src/components/` — Reusable UI components.
 - `src/pages/` — Page-level composition (if needed later).
@@ -36,4 +36,3 @@ Scope: Entire repository. These guidelines apply to all changes unless a more sp
 - Keep PRs scoped and reviewable.
 - Include a short summary of changes and rationale.
 - Note any user-visible changes and migration steps.
-

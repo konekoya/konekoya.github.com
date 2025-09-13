@@ -10,13 +10,12 @@ Personal website, powered by React + Vite + TypeScript and deployed to https://k
 
 ## Structure
 
-- `web/` — app source (Node 20 via `web/.nvmrc`)
-  - `src/` — React components, styles, assets
-  - `public/` — static assets (favicons)
-  - `package.json` — npm scripts
-- `.github/workflows/deploy-pages.yml` — CI to build and deploy `web/dist` to GitHub Pages
+- `src/` — React components, styles, assets
+- `public/` — static assets (favicons)
+- `package.json` — npm scripts
+- `.github/workflows/deploy-pages.yml` — CI to build and deploy `dist` to GitHub Pages
 
-## Scripts (run inside `web/`)
+## Scripts
 
 - `nvm use`
 - `npm install`
