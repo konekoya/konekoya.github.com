@@ -24,3 +24,14 @@ Personal website, powered by React + Vite + TypeScript and deployed to https://k
 - `npm run preview` — preview built site
 
 Deploys automatically on push to `master`.
+
+## Vercel Preview Deployments (optional)
+
+This repo includes a `vercel.json` so it can be connected to Vercel for per‑PR preview URLs.
+
+How to enable previews:
+- Install the Vercel GitHub app and import this repository.
+- Framework will be detected (Vite). Build command `npm run build`, output `dist/`.
+- Vercel will post a preview URL on each pull request automatically.
+
+Routing: `vercel.json` rewrites all routes to `/index.html` to support SPA deep links.
