@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import styles from "./IntroSection.module.css";
+import { useEffect, useRef, useState } from 'react';
+import styles from './IntroSection.module.css';
 
 export function IntroSection() {
   const ref = useRef<HTMLElement | null>(null);
@@ -23,12 +23,12 @@ export function IntroSection() {
   return (
     <section
       ref={ref}
-      className={`${styles.intro} ${active ? styles.active : ""}`}
+      className={`${styles.intro} ${active ? styles.active : ''}`}
     >
       <article className={styles.content}>
         <p className={styles.firstSection}>
           Christian, husband, father of two 👨‍👩‍👦‍👦, Web Frontend Developer and
-          Designer living in Hsinchu, Taiwan 🇹🇼 I'm currently working at{" "}
+          Designer living in Hsinchu, Taiwan 🇹🇼 I'm currently working at{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://en.wikipedia.org/wiki/Hsinchu"
@@ -38,7 +38,7 @@ export function IntroSection() {
           >
             is-land Systems
           </a>
-          , volunteering at a local church called{" "}
+          , volunteering at a local church called{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://newcityhsinchu.wordpress.com/"
@@ -47,8 +47,8 @@ export function IntroSection() {
             data-linktext="New City Church"
           >
             New City Church
-          </a>{" "}
-          as well as doing some{" "}
+          </a>{' '}
+          as well as doing some{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="http://www.github.com/konekoya"
@@ -57,13 +57,13 @@ export function IntroSection() {
             data-linktext="Open Source projects"
           >
             Open Source projects
-          </a>{" "}
+          </a>{' '}
           in my free time.
         </p>
 
         <p className={styles.secondSection}>
           I'm passionate about UIs, and that's what I'm primarily building. I
-          use{" "}
+          use{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://reactjs.org/"
@@ -72,8 +72,8 @@ export function IntroSection() {
             data-linktext="React"
           >
             React
-          </a>{" "}
-          ⚛️ to create beautiful, easy to maintain and reusable components,{" "}
+          </a>{' '}
+          ⚛️ to create beautiful, easy to maintain and reusable components,{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://nodejs.org/en/"
@@ -82,8 +82,8 @@ export function IntroSection() {
             data-linktext="Node.js"
           >
             Node.js
-          </a>{" "}
-          as the server side solution. I BELIEVE in test, so I do unit test with{" "}
+          </a>{' '}
+          as the server side solution. I BELIEVE in test, so I do unit test with{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://jestjs.io/"
@@ -92,8 +92,8 @@ export function IntroSection() {
             data-linktext="Jest"
           >
             Jest
-          </a>{" "}
-          and End-to-End test with{" "}
+          </a>{' '}
+          and End-to-End test with{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://www.cypress.io/"
@@ -103,7 +103,7 @@ export function IntroSection() {
           >
             cypress
           </a>
-          .{" "}
+          .{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://eslint.org/"
@@ -112,8 +112,8 @@ export function IntroSection() {
             data-linktext="ESLint"
           >
             ESLint
-          </a>{" "}
-          and{" "}
+          </a>{' '}
+          and{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://prettier.io/"
@@ -122,8 +122,8 @@ export function IntroSection() {
             data-linktext="Prettier"
           >
             Prettier
-          </a>{" "}
-          to ensure my code quality. Also,{" "}
+          </a>{' '}
+          to ensure my code quality. Also,{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://webpack.js.org/"
@@ -132,8 +132,8 @@ export function IntroSection() {
             data-linktext="webpack"
           >
             webpack
-          </a>{" "}
-          for bundling assets and the last but not least,{" "}
+          </a>{' '}
+          for bundling assets and the last but not least,{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://babeljs.io/"

@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
-import styles from "./AvatarSection.module.css";
-import reactLogo from "../assets/react.svg";
+import { useEffect, useMemo, useState } from 'react';
+import styles from './AvatarSection.module.css';
+import reactLogo from '../assets/react.svg';
 
-const GITHUB_API_URL = "https://api.github.com/users/konekoya";
+const GITHUB_API_URL = 'https://api.github.com/users/konekoya';
 
 export function AvatarSection() {
-  const [avatarUrl, setAvatarUrl] = useState<string>("");
+  const [avatarUrl, setAvatarUrl] = useState<string>('');
   const [loaded, setLoaded] = useState(false);
 
   const fallback = useMemo(() => reactLogo, []);
@@ -38,7 +38,7 @@ export function AvatarSection() {
   }, [fallback]);
 
   return (
-    <section className={`${styles.avatar} ${loaded ? styles.isLoaded : ""}`}>
+    <section className={`${styles.avatar} ${loaded ? styles.isLoaded : ''}`}>
       <div className={styles.profileWrap}>
         <h1 className={styles.title}>Joshua</h1>
         <img className={styles.img} src={avatarUrl} alt="Joshua's Picture" />
