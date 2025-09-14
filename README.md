@@ -1,46 +1,32 @@
 # konekoya.github.com
 
-Personal website, powered by React + Vite + TypeScript and deployed to https://konekoya.github.io/ via GitHub Actions.
+Personal website built with React, Vite, and TypeScript. Deployed to https://konekoya.github.io/ via GitHub Actions.
 
-## Tech Stack
+## Requirements
 
-- React 19, TypeScript 5
-- Vite 7
-- ESLint (flat), CSS Modules
+- Node `22` (`nvm use`)
+- npm `10+`
 
-## Structure
+## Setup
 
-- `src/` — React components, styles, assets
-- `public/` — static assets (favicons)
-- `package.json` — npm scripts
-- `.github/workflows/deploy-pages.yml` — CI to build and deploy `dist` to GitHub Pages
+- `npm install`
+- `npm run dev` — start dev server
 
 ## Scripts
 
-- `nvm use` (Node 22)
-- `npm install`
-- `npm run dev` — start dev server
-- `npm run build` — build production bundle
-- `npm run preview` — preview built site
+- `npm run build` — production build to `dist`
+- `npm run preview` — preview the built site
+- `npm run lint` — ESLint (no warnings allowed)
+- `npm run typecheck` — TypeScript build mode
+- `npm run format` — Prettier write
+- `npm run format:check` — Prettier check (CI)
 
-Deploys automatically on push to `master`.
+## Project Structure
 
-## Netlify Deploy Previews (optional)
+- `src/` — components, styles (CSS Modules), entry
+- `public/` — static assets
 
-This repo includes a `netlify.toml` so it can be connected to Netlify for per‑PR Deploy Previews.
+## CI / Deploy
 
-How to enable previews:
-
-- Sign up/in at https://app.netlify.com and click “Add new site” → “Import an existing project”.
-- Connect GitHub and select `konekoya/konekoya.github.com`.
-- Netlify should auto-detect Vite; if not:
-  - Build command: `npm run build`
-  - Publish directory: `dist`
-- Deploy contexts → ensure “Deploy Previews” are enabled for pull requests.
-- Netlify will post a preview URL on each PR automatically.
-
-Routing: `netlify.toml` adds a catch‑all redirect to `/index.html` for SPA deep links.
-
-Note:
-
-- Production remains on GitHub Pages via the Actions workflow; Netlify is used only for PR previews. You can disable “Production deploys” on the Netlify site to avoid confusion.
+- CI runs format check, lint, typecheck, and build on PRs
+- Push to `master` triggers build and deploy to GitHub Pages
