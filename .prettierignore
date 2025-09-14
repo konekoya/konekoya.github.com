@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+
+# Lock files
+package-lock.json
+
+# Coverage / cache
+coverage
+.cache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
