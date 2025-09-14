@@ -1,9 +1,23 @@
 :root {
-  font-family: Lato, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    Lato,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: #fff;
-  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 51%, #182786 51%, #182786 100%);
+  background: linear-gradient(
+    135deg,
+    #2c3da7 0%,
+    #2c3da7 51%,
+    #182786 51%,
+    #182786 100%
+  );
   min-height: 100vh;
 
   font-synthesis: none;
@@ -21,7 +35,11 @@ a:hover {
   color: #535bf2;
 }
 
-body { margin: 0; min-width: 320px; min-height: 100vh; }
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
 
 h1 {
   font-size: 3.2em;
