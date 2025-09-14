@@ -3,12 +3,26 @@
   scroll-snap-align: start;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #4c008d 0%, #4c008d 51%, #39006a 51%, #39006a 100%);
+  background: linear-gradient(
+    135deg,
+    #4c008d 0%,
+    #4c008d 51%,
+    #39006a 51%,
+    #39006a 100%
+  );
   color: #fff;
 }
 
 .content {
-  font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    'Lato',
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 55px;
@@ -19,14 +33,30 @@
 .socialLinks {
   opacity: 0;
   transform: translateY(40%);
-  transition: opacity 300ms ease, transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
 }
 
-.secondSection { transform: translateY(20%); }
+.secondSection {
+  transform: translateY(20%);
+}
 
-.active .firstSection { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
-.active .secondSection { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
-.active .socialLinks  { opacity: 1; transform: translateY(0); transition-delay: 600ms; }
+.active .firstSection {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 200ms;
+}
+.active .secondSection {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 400ms;
+}
+.active .socialLinks {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 600ms;
+}
 
 .socialLinks {
   display: flex;
@@ -46,7 +76,9 @@
   transition: opacity 300ms ease;
 }
 
-.socialLink:hover { opacity: 0.7; }
+.socialLink:hover {
+  opacity: 0.7;
+}
 
 .link {
   position: relative;
@@ -59,7 +91,9 @@
   color: #fff;
 }
 
-.link:hover { border-bottom-color: transparent; }
+.link:hover {
+  border-bottom-color: transparent;
+}
 
 .link::after {
   content: attr(data-linktext);
@@ -67,10 +101,13 @@
   position: absolute;
   color: #fff;
   background-color: #000;
-  transition: all .3s;
+  transition: all 0.3s;
   white-space: nowrap;
 }
 
-.linkLeft::after { left: -100%; }
-.linkLeft:hover::after { left: 0; }
-
+.linkLeft::after {
+  left: -100%;
+}
+.linkLeft:hover::after {
+  left: 0;
+}

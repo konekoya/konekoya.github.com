@@ -30,6 +30,7 @@ Deploys automatically on push to `master`.
 This repo includes a `netlify.toml` so it can be connected to Netlify for per‑PR Deploy Previews.
 
 How to enable previews:
+
 - Sign up/in at https://app.netlify.com and click “Add new site” → “Import an existing project”.
 - Connect GitHub and select `konekoya/konekoya.github.com`.
 - Netlify should auto-detect Vite; if not:
@@ -41,4 +42,5 @@ How to enable previews:
 Routing: `netlify.toml` adds a catch‑all redirect to `/index.html` for SPA deep links.
 
 Note:
+
 - Production remains on GitHub Pages via the Actions workflow; Netlify is used only for PR previews. You can disable “Production deploys” on the Netlify site to avoid confusion.

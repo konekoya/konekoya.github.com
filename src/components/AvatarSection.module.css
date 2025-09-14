@@ -4,7 +4,13 @@
   place-items: center;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, #2c3da7 0%, #2c3da7 51%, #182786 51%, #182786 100%);
+  background: linear-gradient(
+    135deg,
+    #2c3da7 0%,
+    #2c3da7 51%,
+    #182786 51%,
+    #182786 100%
+  );
   position: relative;
   opacity: 0;
   transition: opacity 600ms ease;
@@ -18,7 +24,9 @@
 .profileWrap {
   opacity: 0;
   transform: translateY(-40px);
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition:
+    transform 300ms ease,
+    opacity 300ms ease;
   transition-delay: 200ms;
 }
 
@@ -55,7 +63,9 @@
   bottom: 1.5rem;
   transform: translateX(-50%) translateY(30px);
   opacity: 0;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition:
+    transform 300ms ease,
+    opacity 300ms ease;
   transition-delay: 500ms;
 }
 
@@ -87,9 +97,20 @@
 }
 
 @keyframes wheel {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); opacity: 1; }
-  40% { transform: translateY(-7px); }
-  60% { transform: translateY(-3px); }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-7px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
 }
 
 .scrollText {

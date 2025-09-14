@@ -1,5 +1,7 @@
 /* Global app styles kept minimal; most live in component modules */
-main { min-height: 100vh; }
+main {
+  min-height: 100vh;
+}
 
 /* Vertical scroll-snap container for fullpage-like sections */
 .snap-container {
