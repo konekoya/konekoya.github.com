@@ -27,18 +27,18 @@ export function IntroSection() {
     >
       <article className={styles.content}>
         <p className={styles.firstSection}>
-          Christian, husband, father of two 👨‍👩‍👦‍👦, Web Frontend Developer and
+          Christian, husband, father of three, Web Frontend Developer and
           Designer living in Hsinchu, Taiwan 🇹🇼 I'm currently working at{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://en.wikipedia.org/wiki/Hsinchu"
             target="_blank"
             rel="noreferrer"
-            data-linktext="is-land Systems"
+            data-linktext="AUO"
           >
-            is-land Systems
+            AUO
           </a>
-          , volunteering at a local church called{' '}
+          , volunteering at a local church named{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://newcityhsinchu.wordpress.com/"
@@ -83,7 +83,28 @@ export function IntroSection() {
           >
             Node.js
           </a>{' '}
-          as the server side solution. I BELIEVE in test, so I do unit test with{' '}
+          as the server-side solution. I write most projects in{' '}
+          <a
+            className={`${styles.link} ${styles.linkLeft}`}
+            href="https://www.typescriptlang.org/"
+            target="_blank"
+            rel="noreferrer"
+            data-linktext="TypeScript"
+          >
+            TypeScript
+          </a>{' '}
+          and prefer{' '}
+          <a
+            className={`${styles.link} ${styles.linkLeft}`}
+            href="https://vitejs.dev/"
+            target="_blank"
+            rel="noreferrer"
+            data-linktext="Vite"
+          >
+            Vite
+          </a>{' '}
+          for fast dev and build tooling. I believe in testing, so I do unit
+          tests with{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://jestjs.io/"
@@ -93,15 +114,15 @@ export function IntroSection() {
           >
             Jest
           </a>{' '}
-          and End-to-End test with{' '}
+          and end-to-end tests with{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
             href="https://www.cypress.io/"
             target="_blank"
             rel="noreferrer"
-            data-linktext="cypress"
+            data-linktext="Cypress"
           >
-            cypress
+            Cypress
           </a>
           .{' '}
           <a
@@ -123,27 +144,7 @@ export function IntroSection() {
           >
             Prettier
           </a>{' '}
-          to ensure my code quality. Also,{' '}
-          <a
-            className={`${styles.link} ${styles.linkLeft}`}
-            href="https://webpack.js.org/"
-            target="_blank"
-            rel="noreferrer"
-            data-linktext="webpack"
-          >
-            webpack
-          </a>{' '}
-          for bundling assets and the last but not least,{' '}
-          <a
-            className={`${styles.link} ${styles.linkLeft}`}
-            href="https://babeljs.io/"
-            target="_blank"
-            rel="noreferrer"
-            data-linktext="Babel"
-          >
-            Babel
-          </a>
-          , one that enables me to write ES2015+ code.
+          help keep my code consistent and readable.
         </p>
 
         <ul className={styles.socialLinks}>
