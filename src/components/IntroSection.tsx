@@ -31,7 +31,7 @@ export function IntroSection() {
           Designer living in Hsinchu, Taiwan 🇹🇼 I'm currently working at{' '}
           <a
             className={`${styles.link} ${styles.linkLeft}`}
-            href="https://en.wikipedia.org/wiki/Hsinchu"
+            href="https://www.auo.com/"
             target="_blank"
             rel="noreferrer"
             data-linktext="AUO"
